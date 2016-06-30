@@ -3,111 +3,118 @@ grammar TrabalhoFinal2016_1;
 // 
 prog : 'program' ID ';' declaracao* funcao* principal #Body;
 
-declaracao: declaracao_var 
-           | declaracao_const 
-           | declaracao_Arrays 
+declaracao: declaracao_var #DeclaarcaoVariaveis
+           | declaracao_const #DeclaarcaoConstantes
+           | declaracao_Arrays #DeclaarcaoArrays;
+
+declaracao_var: tipo ':' var ';' #DeclaracaoVariavel
+; 
+var : lista_ids #Variavel
+    ;
+
+lista_ids : ID ',' lista_ids  #ListaIDs
+          | ID  #Identificador 
           ;
 
-declaracao_var: tipo ':' var ';' 
-               #DeclaracaoVar; 
-var : lista_ids;
+declaracao_const: 'final' tipo constante '=' valor ';' #DeclaracaoConstante 
+                ;
 
-lista_ids : ID ',' lista_ids #ListaIDs
-          | ID #ListaIDsID;
-
-declaracao_const: 'final' tipo constante '=' valor ';' #DeclaracaoConstante;
-
-constante: ID; 
+constante: ID #ConstanteID ; 
 
 valor: INT #ValorInteiro
-      | REAL #ValorReal
-      | STRING #ValorString
-      | BOOLEAN #ValorBooleano
+      | REAL #ValorReal 
+      | STRING  #ValorString
+      | BOOLEAN #ValorBoolean
      ;
-declaracao_Arrays:  tipo ':' lista_arrays ';' 
+declaracao_Arrays:  tipo ':' lista_arrays ';' #DeclaracaoArray
                  ;
 
-lista_arrays: ID '['INT']' ',' lista_arrays
-            | ID '['INT']' 
+lista_arrays: ID '['INT']' ',' lista_arrays #listaArrays
+            | ID '['INT']' #listaArraysArray
             ;
 
-array: ID '['ID']'
-     | ID '['INT ']'
+array: ID '['ID']' #ArrayID
+     | ID '['INT ']' #ArrayINT
      ;
 
-tipo: 'int'
-     | 'real'
-     | 'string'
-     | 'boolean'
+tipo: 'int' #tipoInt
+     | 'real' #tipoReal
+     | 'string' #tipoString
+     | 'boolean' #tipoBoolean
     ;
 
-funcao: tipo nome_funcao '(' lista_de_parametros ')' '{' comandos* '}'
+funcao: tipo nome_funcao '(' lista_de_parametros ')' '{' comandos* '}' #Function
       ;
-nome_funcao: ID
+nome_funcao: ID #NomeFuncao
            ;
-lista_de_parametros:parametro ',' lista_de_parametros
-                    | parametro
+lista_de_parametros:parametro ',' lista_de_parametros #listaParam
+                    | parametro #Param
+                    |/*vazio*/ #ParamVazio
                     ;
 
-parametro : tipo ID
-          |//vazio
+parametro : tipo ID #Parameter
           ;
 
-comandos : 'print' '('lista_expr')' ';'
-         | cmd_atribuicao
-         | cmd_controle
-         | 'exit' ';'
-         | 'read' '(' lista_ids ')'';'
-         | 'read' '(' array ')'';'
-         | cmd_return
-         | chamada_funcao
-         | 'break' ';'
+comandos : 'print' '('lista_expr')' ';' #comandoPrint
+         | cmd_atribuicao #comandoAtribuicao
+         | cmd_controle #comandoControle
+         | 'exit' ';' #comandoExit
+         | 'read' '(' lista_ids ')'';' #comadoRead
+         | 'read' '(' array ')'';' #comadoReadArrays
+         | cmd_return #comandoRetorno
+         | chamada_funcao #comandoChamadaFuncao
+         | 'break' ';' #comandoBreak
          ;
-cmd_return: 'return''('expr')'';'
+cmd_return: 'return''('expr')'';' #Return
           ;
-chamada_funcao: ID '(' lista_expr? ')' ';'
+chamada_funcao: ID '(' lista_expr? ')' ';' #chamadaFuncao
               ;
-lista_expr: expr ',' lista_expr
-          | expr
+
+// chamada_de_funcao_aninhada : ID '(' lista_de_expr ')' #chamadaFuncaoAninhada; 
+
+lista_expr: expr ',' lista_expr #ListaExpressoes
+          | expr #ListaExpressoesExpr
           ;
-cmd_controle : 'if' '(' oprelacional ')' 'then' '{' comandos* '}' ( 'else' '{' comandos* '}' )?
-         | 'while' '(' oprelacional ')' '{' comandos* '}'
-         | 'for' '(' ID '=' condicoes ':' condicoes ('step' condicoes)? ')' '{' comandos* '}'
+
+comando_else : 'else' '{' comandos* '}'  #controleElse;
+
+cmd_controle : 'if' '(' oprelacional ')' 'then' '{' comandos* '}' (comando_else)? #comandoControleIf
+         | 'while' '(' oprelacional ')' '{' comandos* '}' #comandoControleWhile
+         | 'for' '(' ID '=' condicoes ':' condicoes ('step' condicoes)? ')' '{' comandos* '}' #comandoControleFor
          ;
-condicoes: ID
-         | INT
+condicoes: ID #CondicoesID
+         | INT #CondiicoesINT
          ;
-cmd_atribuicao: cmd_atrib_var
-              | cmd_atrib_array
+cmd_atribuicao: cmd_atrib_var #AtributionVar
+              | cmd_atrib_array #AtributionArray
               ;
-cmd_atrib_var : var '=' expr ';' 
+cmd_atrib_var : var '=' expr ';' #AtribuicaodeVariavel
            ;
 
-cmd_atrib_array : array '=' expr ';'  
+cmd_atrib_array : array '=' expr ';'  #AtribuicaodeArray
            ;
 
 
-oprelacional : '!' oprelacional 
-             | expr ('>'|'<'|'>='|'<='|'=='|'!='| '<>') expr 
-             | expr 
+oprelacional : '!' oprelacional  #oprelacionalNot
+             | oprelacional ('>'|'<'|'>='|'<='|'=='|'!='| '<>') oprelacional #oprelacionalBinario
+             | expr #prelacionalExpr
     ;
 
-expr : '-' expr
-     | expr s= ('*'|'/') expr
-     | expr ('+'|'-') expr
-     | valor
-     | ID
-     | array
-     | '(' expr ')'
+expr : '-' expr #exprNegativo
+     | expr s= ('*'|'/') expr #exprMultDiv
+     | expr ('+'|'-') expr #exprSomaSub
+     | valor #exprValor
+     | ID #exprID
+     | array #exprArray
+     | '(' expr ')' #exprParenteses
      ;
 
 
-numero : INT
-       | REAL
+numero : INT #numeroInteiro
+       | REAL #numeroReal
        ;
 
-principal: 'main' '(' ')' '{' comandos* '}'
-         ;
+principal: 'main' '(' ')' '{' comandos* '}' #Main;
 
 
 STRING : '"'.*?'"';

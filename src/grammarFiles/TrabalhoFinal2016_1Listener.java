@@ -1,4 +1,6 @@
-// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construção de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
+package grammarFiles;
+
+// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construï¿½ï¿½o de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -8,59 +10,70 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface TrabalhoFinal2016_1Listener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_arrays}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ArrayID}.
 	 * @param ctx the parse tree
 	 */
-	void enterLista_arrays(@NotNull TrabalhoFinal2016_1Parser.Lista_arraysContext ctx);
+	void enterArrayID(@NotNull TrabalhoFinal2016_1Parser.ArrayIDContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_arrays}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ArrayID}.
 	 * @param ctx the parse tree
 	 */
-	void exitLista_arrays(@NotNull TrabalhoFinal2016_1Parser.Lista_arraysContext ctx);
+	void exitArrayID(@NotNull TrabalhoFinal2016_1Parser.ArrayIDContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atrib_var}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoVariavel}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmd_atrib_var(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_varContext ctx);
+	void enterDeclaracaoVariavel(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVariavelContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atrib_var}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoVariavel}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmd_atrib_var(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_varContext ctx);
+	void exitDeclaracaoVariavel(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVariavelContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atribuicao}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#controleElse}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmd_atribuicao(@NotNull TrabalhoFinal2016_1Parser.Cmd_atribuicaoContext ctx);
+	void enterControleElse(@NotNull TrabalhoFinal2016_1Parser.ControleElseContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atribuicao}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#controleElse}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmd_atribuicao(@NotNull TrabalhoFinal2016_1Parser.Cmd_atribuicaoContext ctx);
+	void exitControleElse(@NotNull TrabalhoFinal2016_1Parser.ControleElseContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#condicoes}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoString}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondicoes(@NotNull TrabalhoFinal2016_1Parser.CondicoesContext ctx);
+	void enterTipoString(@NotNull TrabalhoFinal2016_1Parser.TipoStringContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#condicoes}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoString}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondicoes(@NotNull TrabalhoFinal2016_1Parser.CondicoesContext ctx);
+	void exitTipoString(@NotNull TrabalhoFinal2016_1Parser.TipoStringContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#var}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoBreak}.
 	 * @param ctx the parse tree
 	 */
-	void enterVar(@NotNull TrabalhoFinal2016_1Parser.VarContext ctx);
+	void enterComandoBreak(@NotNull TrabalhoFinal2016_1Parser.ComandoBreakContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#var}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoBreak}.
 	 * @param ctx the parse tree
 	 */
-	void exitVar(@NotNull TrabalhoFinal2016_1Parser.VarContext ctx);
+	void exitComandoBreak(@NotNull TrabalhoFinal2016_1Parser.ComandoBreakContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacionalBinario}.
+	 * @param ctx the parse tree
+	 */
+	void enterOprelacionalBinario(@NotNull TrabalhoFinal2016_1Parser.OprelacionalBinarioContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacionalBinario}.
+	 * @param ctx the parse tree
+	 */
+	void exitOprelacionalBinario(@NotNull TrabalhoFinal2016_1Parser.OprelacionalBinarioContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorString}.
@@ -74,6 +87,17 @@ public interface TrabalhoFinal2016_1Listener extends ParseTreeListener {
 	void exitValorString(@NotNull TrabalhoFinal2016_1Parser.ValorStringContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoArrays}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaarcaoArrays(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoArraysContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoArrays}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaarcaoArrays(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoArraysContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoConstante}.
 	 * @param ctx the parse tree
 	 */
@@ -85,15 +109,37 @@ public interface TrabalhoFinal2016_1Listener extends ParseTreeListener {
 	void exitDeclaracaoConstante(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoConstanteContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#expr}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprNegativo}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpr(@NotNull TrabalhoFinal2016_1Parser.ExprContext ctx);
+	void enterExprNegativo(@NotNull TrabalhoFinal2016_1Parser.ExprNegativoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#expr}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprNegativo}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpr(@NotNull TrabalhoFinal2016_1Parser.ExprContext ctx);
+	void exitExprNegativo(@NotNull TrabalhoFinal2016_1Parser.ExprNegativoContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comadoRead}.
+	 * @param ctx the parse tree
+	 */
+	void enterComadoRead(@NotNull TrabalhoFinal2016_1Parser.ComadoReadContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comadoRead}.
+	 * @param ctx the parse tree
+	 */
+	void exitComadoRead(@NotNull TrabalhoFinal2016_1Parser.ComadoReadContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtribuicaodeVariavel}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtribuicaodeVariavel(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeVariavelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtribuicaodeVariavel}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtribuicaodeVariavel(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeVariavelContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorInteiro}.
@@ -107,103 +153,59 @@ public interface TrabalhoFinal2016_1Listener extends ParseTreeListener {
 	void exitValorInteiro(@NotNull TrabalhoFinal2016_1Parser.ValorInteiroContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#funcao}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtributionVar}.
 	 * @param ctx the parse tree
 	 */
-	void enterFuncao(@NotNull TrabalhoFinal2016_1Parser.FuncaoContext ctx);
+	void enterAtributionVar(@NotNull TrabalhoFinal2016_1Parser.AtributionVarContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#funcao}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtributionVar}.
 	 * @param ctx the parse tree
 	 */
-	void exitFuncao(@NotNull TrabalhoFinal2016_1Parser.FuncaoContext ctx);
+	void exitAtributionVar(@NotNull TrabalhoFinal2016_1Parser.AtributionVarContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#principal}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtributionArray}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrincipal(@NotNull TrabalhoFinal2016_1Parser.PrincipalContext ctx);
+	void enterAtributionArray(@NotNull TrabalhoFinal2016_1Parser.AtributionArrayContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#principal}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtributionArray}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrincipal(@NotNull TrabalhoFinal2016_1Parser.PrincipalContext ctx);
+	void exitAtributionArray(@NotNull TrabalhoFinal2016_1Parser.AtributionArrayContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorBooleano}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoChamadaFuncao}.
 	 * @param ctx the parse tree
 	 */
-	void enterValorBooleano(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanoContext ctx);
+	void enterComandoChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ComandoChamadaFuncaoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorBooleano}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoChamadaFuncao}.
 	 * @param ctx the parse tree
 	 */
-	void exitValorBooleano(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanoContext ctx);
+	void exitComandoChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ComandoChamadaFuncaoContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atrib_array}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ConstanteID}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmd_atrib_array(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_arrayContext ctx);
+	void enterConstanteID(@NotNull TrabalhoFinal2016_1Parser.ConstanteIDContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atrib_array}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ConstanteID}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmd_atrib_array(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_arrayContext ctx);
+	void exitConstanteID(@NotNull TrabalhoFinal2016_1Parser.ConstanteIDContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_expr}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoBoolean}.
 	 * @param ctx the parse tree
 	 */
-	void enterLista_expr(@NotNull TrabalhoFinal2016_1Parser.Lista_exprContext ctx);
+	void enterTipoBoolean(@NotNull TrabalhoFinal2016_1Parser.TipoBooleanContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_expr}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoBoolean}.
 	 * @param ctx the parse tree
 	 */
-	void exitLista_expr(@NotNull TrabalhoFinal2016_1Parser.Lista_exprContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_controle}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmd_controle(@NotNull TrabalhoFinal2016_1Parser.Cmd_controleContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_controle}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmd_controle(@NotNull TrabalhoFinal2016_1Parser.Cmd_controleContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaIDsID}.
-	 * @param ctx the parse tree
-	 */
-	void enterListaIDsID(@NotNull TrabalhoFinal2016_1Parser.ListaIDsIDContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaIDsID}.
-	 * @param ctx the parse tree
-	 */
-	void exitListaIDsID(@NotNull TrabalhoFinal2016_1Parser.ListaIDsIDContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_return}.
-	 * @param ctx the parse tree
-	 */
-	void enterCmd_return(@NotNull TrabalhoFinal2016_1Parser.Cmd_returnContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_return}.
-	 * @param ctx the parse tree
-	 */
-	void exitCmd_return(@NotNull TrabalhoFinal2016_1Parser.Cmd_returnContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandos}.
-	 * @param ctx the parse tree
-	 */
-	void enterComandos(@NotNull TrabalhoFinal2016_1Parser.ComandosContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandos}.
-	 * @param ctx the parse tree
-	 */
-	void exitComandos(@NotNull TrabalhoFinal2016_1Parser.ComandosContext ctx);
+	void exitTipoBoolean(@NotNull TrabalhoFinal2016_1Parser.TipoBooleanContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Body}.
@@ -217,26 +219,26 @@ public interface TrabalhoFinal2016_1Listener extends ParseTreeListener {
 	void exitBody(@NotNull TrabalhoFinal2016_1Parser.BodyContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_de_parametros}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Param}.
 	 * @param ctx the parse tree
 	 */
-	void enterLista_de_parametros(@NotNull TrabalhoFinal2016_1Parser.Lista_de_parametrosContext ctx);
+	void enterParam(@NotNull TrabalhoFinal2016_1Parser.ParamContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_de_parametros}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Param}.
 	 * @param ctx the parse tree
 	 */
-	void exitLista_de_parametros(@NotNull TrabalhoFinal2016_1Parser.Lista_de_parametrosContext ctx);
+	void exitParam(@NotNull TrabalhoFinal2016_1Parser.ParamContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#constante}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ArrayINT}.
 	 * @param ctx the parse tree
 	 */
-	void enterConstante(@NotNull TrabalhoFinal2016_1Parser.ConstanteContext ctx);
+	void enterArrayINT(@NotNull TrabalhoFinal2016_1Parser.ArrayINTContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#constante}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ArrayINT}.
 	 * @param ctx the parse tree
 	 */
-	void exitConstante(@NotNull TrabalhoFinal2016_1Parser.ConstanteContext ctx);
+	void exitArrayINT(@NotNull TrabalhoFinal2016_1Parser.ArrayINTContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaIDs}.
@@ -250,17 +252,6 @@ public interface TrabalhoFinal2016_1Listener extends ParseTreeListener {
 	void exitListaIDs(@NotNull TrabalhoFinal2016_1Parser.ListaIDsContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#parametro}.
-	 * @param ctx the parse tree
-	 */
-	void enterParametro(@NotNull TrabalhoFinal2016_1Parser.ParametroContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#parametro}.
-	 * @param ctx the parse tree
-	 */
-	void exitParametro(@NotNull TrabalhoFinal2016_1Parser.ParametroContext ctx);
-
-	/**
 	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorReal}.
 	 * @param ctx the parse tree
 	 */
@@ -272,101 +263,464 @@ public interface TrabalhoFinal2016_1Listener extends ParseTreeListener {
 	void exitValorReal(@NotNull TrabalhoFinal2016_1Parser.ValorRealContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#numero}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleFor}.
 	 * @param ctx the parse tree
 	 */
-	void enterNumero(@NotNull TrabalhoFinal2016_1Parser.NumeroContext ctx);
+	void enterComandoControleFor(@NotNull TrabalhoFinal2016_1Parser.ComandoControleForContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#numero}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleFor}.
 	 * @param ctx the parse tree
 	 */
-	void exitNumero(@NotNull TrabalhoFinal2016_1Parser.NumeroContext ctx);
+	void exitComandoControleFor(@NotNull TrabalhoFinal2016_1Parser.ComandoControleForContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#declaracao_Arrays}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaExpressoesExpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracao_Arrays(@NotNull TrabalhoFinal2016_1Parser.Declaracao_ArraysContext ctx);
+	void enterListaExpressoesExpr(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#declaracao_Arrays}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaExpressoesExpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracao_Arrays(@NotNull TrabalhoFinal2016_1Parser.Declaracao_ArraysContext ctx);
+	void exitListaExpressoesExpr(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesExprContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacional}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoReal}.
 	 * @param ctx the parse tree
 	 */
-	void enterOprelacional(@NotNull TrabalhoFinal2016_1Parser.OprelacionalContext ctx);
+	void enterTipoReal(@NotNull TrabalhoFinal2016_1Parser.TipoRealContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacional}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoReal}.
 	 * @param ctx the parse tree
 	 */
-	void exitOprelacional(@NotNull TrabalhoFinal2016_1Parser.OprelacionalContext ctx);
+	void exitTipoReal(@NotNull TrabalhoFinal2016_1Parser.TipoRealContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#nome_funcao}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaArrays}.
 	 * @param ctx the parse tree
 	 */
-	void enterNome_funcao(@NotNull TrabalhoFinal2016_1Parser.Nome_funcaoContext ctx);
+	void enterListaArrays(@NotNull TrabalhoFinal2016_1Parser.ListaArraysContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#nome_funcao}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaArrays}.
 	 * @param ctx the parse tree
 	 */
-	void exitNome_funcao(@NotNull TrabalhoFinal2016_1Parser.Nome_funcaoContext ctx);
+	void exitListaArrays(@NotNull TrabalhoFinal2016_1Parser.ListaArraysContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#chamada_funcao}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#numeroInteiro}.
 	 * @param ctx the parse tree
 	 */
-	void enterChamada_funcao(@NotNull TrabalhoFinal2016_1Parser.Chamada_funcaoContext ctx);
+	void enterNumeroInteiro(@NotNull TrabalhoFinal2016_1Parser.NumeroInteiroContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#chamada_funcao}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#numeroInteiro}.
 	 * @param ctx the parse tree
 	 */
-	void exitChamada_funcao(@NotNull TrabalhoFinal2016_1Parser.Chamada_funcaoContext ctx);
+	void exitNumeroInteiro(@NotNull TrabalhoFinal2016_1Parser.NumeroInteiroContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipo}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprID}.
 	 * @param ctx the parse tree
 	 */
-	void enterTipo(@NotNull TrabalhoFinal2016_1Parser.TipoContext ctx);
+	void enterExprID(@NotNull TrabalhoFinal2016_1Parser.ExprIDContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipo}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprID}.
 	 * @param ctx the parse tree
 	 */
-	void exitTipo(@NotNull TrabalhoFinal2016_1Parser.TipoContext ctx);
+	void exitExprID(@NotNull TrabalhoFinal2016_1Parser.ExprIDContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#declaracao}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Return}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracao(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoContext ctx);
+	void enterReturn(@NotNull TrabalhoFinal2016_1Parser.ReturnContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#declaracao}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Return}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracao(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoContext ctx);
+	void exitReturn(@NotNull TrabalhoFinal2016_1Parser.ReturnContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoVar}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaParam}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracaoVar(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVarContext ctx);
+	void enterListaParam(@NotNull TrabalhoFinal2016_1Parser.ListaParamContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoVar}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaParam}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracaoVar(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVarContext ctx);
+	void exitListaParam(@NotNull TrabalhoFinal2016_1Parser.ListaParamContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#array}.
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoInt}.
 	 * @param ctx the parse tree
 	 */
-	void enterArray(@NotNull TrabalhoFinal2016_1Parser.ArrayContext ctx);
+	void enterTipoInt(@NotNull TrabalhoFinal2016_1Parser.TipoIntContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#array}.
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoInt}.
 	 * @param ctx the parse tree
 	 */
-	void exitArray(@NotNull TrabalhoFinal2016_1Parser.ArrayContext ctx);
+	void exitTipoInt(@NotNull TrabalhoFinal2016_1Parser.TipoIntContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoAtribuicao}.
+	 * @param ctx the parse tree
+	 */
+	void enterComandoAtribuicao(@NotNull TrabalhoFinal2016_1Parser.ComandoAtribuicaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoAtribuicao}.
+	 * @param ctx the parse tree
+	 */
+	void exitComandoAtribuicao(@NotNull TrabalhoFinal2016_1Parser.ComandoAtribuicaoContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprArray}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprArray(@NotNull TrabalhoFinal2016_1Parser.ExprArrayContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprArray}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprArray(@NotNull TrabalhoFinal2016_1Parser.ExprArrayContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoRetorno}.
+	 * @param ctx the parse tree
+	 */
+	void enterComandoRetorno(@NotNull TrabalhoFinal2016_1Parser.ComandoRetornoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoRetorno}.
+	 * @param ctx the parse tree
+	 */
+	void exitComandoRetorno(@NotNull TrabalhoFinal2016_1Parser.ComandoRetornoContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Identificador}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentificador(@NotNull TrabalhoFinal2016_1Parser.IdentificadorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Identificador}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentificador(@NotNull TrabalhoFinal2016_1Parser.IdentificadorContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorBoolean}.
+	 * @param ctx the parse tree
+	 */
+	void enterValorBoolean(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorBoolean}.
+	 * @param ctx the parse tree
+	 */
+	void exitValorBoolean(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleWhile}.
+	 * @param ctx the parse tree
+	 */
+	void enterComandoControleWhile(@NotNull TrabalhoFinal2016_1Parser.ComandoControleWhileContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleWhile}.
+	 * @param ctx the parse tree
+	 */
+	void exitComandoControleWhile(@NotNull TrabalhoFinal2016_1Parser.ComandoControleWhileContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#chamadaFuncao}.
+	 * @param ctx the parse tree
+	 */
+	void enterChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ChamadaFuncaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#chamadaFuncao}.
+	 * @param ctx the parse tree
+	 */
+	void exitChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ChamadaFuncaoContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaExpressoes}.
+	 * @param ctx the parse tree
+	 */
+	void enterListaExpressoes(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaExpressoes}.
+	 * @param ctx the parse tree
+	 */
+	void exitListaExpressoes(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#prelacionalExpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrelacionalExpr(@NotNull TrabalhoFinal2016_1Parser.PrelacionalExprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#prelacionalExpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrelacionalExpr(@NotNull TrabalhoFinal2016_1Parser.PrelacionalExprContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Main}.
+	 * @param ctx the parse tree
+	 */
+	void enterMain(@NotNull TrabalhoFinal2016_1Parser.MainContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Main}.
+	 * @param ctx the parse tree
+	 */
+	void exitMain(@NotNull TrabalhoFinal2016_1Parser.MainContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControle}.
+	 * @param ctx the parse tree
+	 */
+	void enterComandoControle(@NotNull TrabalhoFinal2016_1Parser.ComandoControleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControle}.
+	 * @param ctx the parse tree
+	 */
+	void exitComandoControle(@NotNull TrabalhoFinal2016_1Parser.ComandoControleContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#ParamVazio}.
+	 * @param ctx the parse tree
+	 */
+	void enterParamVazio(@NotNull TrabalhoFinal2016_1Parser.ParamVazioContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ParamVazio}.
+	 * @param ctx the parse tree
+	 */
+	void exitParamVazio(@NotNull TrabalhoFinal2016_1Parser.ParamVazioContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoVariaveis}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaarcaoVariaveis(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoVariaveisContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoVariaveis}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaarcaoVariaveis(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoVariaveisContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprSomaSub}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprSomaSub(@NotNull TrabalhoFinal2016_1Parser.ExprSomaSubContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprSomaSub}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprSomaSub(@NotNull TrabalhoFinal2016_1Parser.ExprSomaSubContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoConstantes}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaarcaoConstantes(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoConstantesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoConstantes}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaarcaoConstantes(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoConstantesContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprMultDiv}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprMultDiv(@NotNull TrabalhoFinal2016_1Parser.ExprMultDivContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprMultDiv}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprMultDiv(@NotNull TrabalhoFinal2016_1Parser.ExprMultDivContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Parameter}.
+	 * @param ctx the parse tree
+	 */
+	void enterParameter(@NotNull TrabalhoFinal2016_1Parser.ParameterContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Parameter}.
+	 * @param ctx the parse tree
+	 */
+	void exitParameter(@NotNull TrabalhoFinal2016_1Parser.ParameterContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoExit}.
+	 * @param ctx the parse tree
+	 */
+	void enterComandoExit(@NotNull TrabalhoFinal2016_1Parser.ComandoExitContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoExit}.
+	 * @param ctx the parse tree
+	 */
+	void exitComandoExit(@NotNull TrabalhoFinal2016_1Parser.ComandoExitContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtribuicaodeArray}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtribuicaodeArray(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeArrayContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtribuicaodeArray}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtribuicaodeArray(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeArrayContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoArray}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaracaoArray(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoArrayContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoArray}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaracaoArray(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoArrayContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaArraysArray}.
+	 * @param ctx the parse tree
+	 */
+	void enterListaArraysArray(@NotNull TrabalhoFinal2016_1Parser.ListaArraysArrayContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaArraysArray}.
+	 * @param ctx the parse tree
+	 */
+	void exitListaArraysArray(@NotNull TrabalhoFinal2016_1Parser.ListaArraysArrayContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Variavel}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariavel(@NotNull TrabalhoFinal2016_1Parser.VariavelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Variavel}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariavel(@NotNull TrabalhoFinal2016_1Parser.VariavelContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprParenteses}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprParenteses(@NotNull TrabalhoFinal2016_1Parser.ExprParentesesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprParenteses}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprParenteses(@NotNull TrabalhoFinal2016_1Parser.ExprParentesesContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleIf}.
+	 * @param ctx the parse tree
+	 */
+	void enterComandoControleIf(@NotNull TrabalhoFinal2016_1Parser.ComandoControleIfContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleIf}.
+	 * @param ctx the parse tree
+	 */
+	void exitComandoControleIf(@NotNull TrabalhoFinal2016_1Parser.ComandoControleIfContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#Function}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction(@NotNull TrabalhoFinal2016_1Parser.FunctionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Function}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction(@NotNull TrabalhoFinal2016_1Parser.FunctionContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprValor}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprValor(@NotNull TrabalhoFinal2016_1Parser.ExprValorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprValor}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprValor(@NotNull TrabalhoFinal2016_1Parser.ExprValorContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#numeroReal}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumeroReal(@NotNull TrabalhoFinal2016_1Parser.NumeroRealContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#numeroReal}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumeroReal(@NotNull TrabalhoFinal2016_1Parser.NumeroRealContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#CondiicoesINT}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondiicoesINT(@NotNull TrabalhoFinal2016_1Parser.CondiicoesINTContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#CondiicoesINT}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondiicoesINT(@NotNull TrabalhoFinal2016_1Parser.CondiicoesINTContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comadoReadArrays}.
+	 * @param ctx the parse tree
+	 */
+	void enterComadoReadArrays(@NotNull TrabalhoFinal2016_1Parser.ComadoReadArraysContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comadoReadArrays}.
+	 * @param ctx the parse tree
+	 */
+	void exitComadoReadArrays(@NotNull TrabalhoFinal2016_1Parser.ComadoReadArraysContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacionalNot}.
+	 * @param ctx the parse tree
+	 */
+	void enterOprelacionalNot(@NotNull TrabalhoFinal2016_1Parser.OprelacionalNotContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacionalNot}.
+	 * @param ctx the parse tree
+	 */
+	void exitOprelacionalNot(@NotNull TrabalhoFinal2016_1Parser.OprelacionalNotContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoPrint}.
+	 * @param ctx the parse tree
+	 */
+	void enterComandoPrint(@NotNull TrabalhoFinal2016_1Parser.ComandoPrintContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoPrint}.
+	 * @param ctx the parse tree
+	 */
+	void exitComandoPrint(@NotNull TrabalhoFinal2016_1Parser.ComandoPrintContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#CondicoesID}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondicoesID(@NotNull TrabalhoFinal2016_1Parser.CondicoesIDContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#CondicoesID}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondicoesID(@NotNull TrabalhoFinal2016_1Parser.CondicoesIDContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link TrabalhoFinal2016_1Parser#NomeFuncao}.
+	 * @param ctx the parse tree
+	 */
+	void enterNomeFuncao(@NotNull TrabalhoFinal2016_1Parser.NomeFuncaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TrabalhoFinal2016_1Parser#NomeFuncao}.
+	 * @param ctx the parse tree
+	 */
+	void exitNomeFuncao(@NotNull TrabalhoFinal2016_1Parser.NomeFuncaoContext ctx);
 }

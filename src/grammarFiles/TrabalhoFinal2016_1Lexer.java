@@ -1,4 +1,6 @@
-// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construção de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
+package grammarFiles;
+
+// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construï¿½ï¿½o de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

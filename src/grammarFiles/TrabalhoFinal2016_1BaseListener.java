@@ -1,4 +1,6 @@
-// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construção de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
+package grammarFiles;
+
+// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construï¿½ï¿½o de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -16,65 +18,78 @@ public class TrabalhoFinal2016_1BaseListener implements TrabalhoFinal2016_1Liste
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterLista_arrays(@NotNull TrabalhoFinal2016_1Parser.Lista_arraysContext ctx) { }
+	@Override public void enterArrayID(@NotNull TrabalhoFinal2016_1Parser.ArrayIDContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitLista_arrays(@NotNull TrabalhoFinal2016_1Parser.Lista_arraysContext ctx) { }
+	@Override public void exitArrayID(@NotNull TrabalhoFinal2016_1Parser.ArrayIDContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterCmd_atrib_var(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_varContext ctx) { }
+	@Override public void enterDeclaracaoVariavel(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVariavelContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitCmd_atrib_var(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_varContext ctx) { }
+	@Override public void exitDeclaracaoVariavel(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVariavelContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterCmd_atribuicao(@NotNull TrabalhoFinal2016_1Parser.Cmd_atribuicaoContext ctx) { }
+	@Override public void enterControleElse(@NotNull TrabalhoFinal2016_1Parser.ControleElseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitCmd_atribuicao(@NotNull TrabalhoFinal2016_1Parser.Cmd_atribuicaoContext ctx) { }
+	@Override public void exitControleElse(@NotNull TrabalhoFinal2016_1Parser.ControleElseContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterCondicoes(@NotNull TrabalhoFinal2016_1Parser.CondicoesContext ctx) { }
+	@Override public void enterTipoString(@NotNull TrabalhoFinal2016_1Parser.TipoStringContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitCondicoes(@NotNull TrabalhoFinal2016_1Parser.CondicoesContext ctx) { }
+	@Override public void exitTipoString(@NotNull TrabalhoFinal2016_1Parser.TipoStringContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterVar(@NotNull TrabalhoFinal2016_1Parser.VarContext ctx) { }
+	@Override public void enterComandoBreak(@NotNull TrabalhoFinal2016_1Parser.ComandoBreakContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitVar(@NotNull TrabalhoFinal2016_1Parser.VarContext ctx) { }
+	@Override public void exitComandoBreak(@NotNull TrabalhoFinal2016_1Parser.ComandoBreakContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterOprelacionalBinario(@NotNull TrabalhoFinal2016_1Parser.OprelacionalBinarioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitOprelacionalBinario(@NotNull TrabalhoFinal2016_1Parser.OprelacionalBinarioContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -94,6 +109,19 @@ public class TrabalhoFinal2016_1BaseListener implements TrabalhoFinal2016_1Liste
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterDeclaarcaoArrays(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoArraysContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitDeclaarcaoArrays(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoArraysContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterDeclaracaoConstante(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoConstanteContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -107,13 +135,39 @@ public class TrabalhoFinal2016_1BaseListener implements TrabalhoFinal2016_1Liste
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterExpr(@NotNull TrabalhoFinal2016_1Parser.ExprContext ctx) { }
+	@Override public void enterExprNegativo(@NotNull TrabalhoFinal2016_1Parser.ExprNegativoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitExpr(@NotNull TrabalhoFinal2016_1Parser.ExprContext ctx) { }
+	@Override public void exitExprNegativo(@NotNull TrabalhoFinal2016_1Parser.ExprNegativoContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComadoRead(@NotNull TrabalhoFinal2016_1Parser.ComadoReadContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComadoRead(@NotNull TrabalhoFinal2016_1Parser.ComadoReadContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterAtribuicaodeVariavel(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeVariavelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitAtribuicaodeVariavel(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeVariavelContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -133,117 +187,65 @@ public class TrabalhoFinal2016_1BaseListener implements TrabalhoFinal2016_1Liste
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterFuncao(@NotNull TrabalhoFinal2016_1Parser.FuncaoContext ctx) { }
+	@Override public void enterAtributionVar(@NotNull TrabalhoFinal2016_1Parser.AtributionVarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitFuncao(@NotNull TrabalhoFinal2016_1Parser.FuncaoContext ctx) { }
+	@Override public void exitAtributionVar(@NotNull TrabalhoFinal2016_1Parser.AtributionVarContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterPrincipal(@NotNull TrabalhoFinal2016_1Parser.PrincipalContext ctx) { }
+	@Override public void enterAtributionArray(@NotNull TrabalhoFinal2016_1Parser.AtributionArrayContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitPrincipal(@NotNull TrabalhoFinal2016_1Parser.PrincipalContext ctx) { }
+	@Override public void exitAtributionArray(@NotNull TrabalhoFinal2016_1Parser.AtributionArrayContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterValorBooleano(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanoContext ctx) { }
+	@Override public void enterComandoChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ComandoChamadaFuncaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitValorBooleano(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanoContext ctx) { }
+	@Override public void exitComandoChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ComandoChamadaFuncaoContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterCmd_atrib_array(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_arrayContext ctx) { }
+	@Override public void enterConstanteID(@NotNull TrabalhoFinal2016_1Parser.ConstanteIDContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitCmd_atrib_array(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_arrayContext ctx) { }
+	@Override public void exitConstanteID(@NotNull TrabalhoFinal2016_1Parser.ConstanteIDContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterLista_expr(@NotNull TrabalhoFinal2016_1Parser.Lista_exprContext ctx) { }
+	@Override public void enterTipoBoolean(@NotNull TrabalhoFinal2016_1Parser.TipoBooleanContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitLista_expr(@NotNull TrabalhoFinal2016_1Parser.Lista_exprContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void enterCmd_controle(@NotNull TrabalhoFinal2016_1Parser.Cmd_controleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitCmd_controle(@NotNull TrabalhoFinal2016_1Parser.Cmd_controleContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void enterListaIDsID(@NotNull TrabalhoFinal2016_1Parser.ListaIDsIDContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitListaIDsID(@NotNull TrabalhoFinal2016_1Parser.ListaIDsIDContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void enterCmd_return(@NotNull TrabalhoFinal2016_1Parser.Cmd_returnContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitCmd_return(@NotNull TrabalhoFinal2016_1Parser.Cmd_returnContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void enterComandos(@NotNull TrabalhoFinal2016_1Parser.ComandosContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitComandos(@NotNull TrabalhoFinal2016_1Parser.ComandosContext ctx) { }
+	@Override public void exitTipoBoolean(@NotNull TrabalhoFinal2016_1Parser.TipoBooleanContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -263,26 +265,26 @@ public class TrabalhoFinal2016_1BaseListener implements TrabalhoFinal2016_1Liste
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterLista_de_parametros(@NotNull TrabalhoFinal2016_1Parser.Lista_de_parametrosContext ctx) { }
+	@Override public void enterParam(@NotNull TrabalhoFinal2016_1Parser.ParamContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitLista_de_parametros(@NotNull TrabalhoFinal2016_1Parser.Lista_de_parametrosContext ctx) { }
+	@Override public void exitParam(@NotNull TrabalhoFinal2016_1Parser.ParamContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterConstante(@NotNull TrabalhoFinal2016_1Parser.ConstanteContext ctx) { }
+	@Override public void enterArrayINT(@NotNull TrabalhoFinal2016_1Parser.ArrayINTContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitConstante(@NotNull TrabalhoFinal2016_1Parser.ConstanteContext ctx) { }
+	@Override public void exitArrayINT(@NotNull TrabalhoFinal2016_1Parser.ArrayINTContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -302,19 +304,6 @@ public class TrabalhoFinal2016_1BaseListener implements TrabalhoFinal2016_1Liste
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterParametro(@NotNull TrabalhoFinal2016_1Parser.ParametroContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitParametro(@NotNull TrabalhoFinal2016_1Parser.ParametroContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
 	@Override public void enterValorReal(@NotNull TrabalhoFinal2016_1Parser.ValorRealContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -328,117 +317,546 @@ public class TrabalhoFinal2016_1BaseListener implements TrabalhoFinal2016_1Liste
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterNumero(@NotNull TrabalhoFinal2016_1Parser.NumeroContext ctx) { }
+	@Override public void enterComandoControleFor(@NotNull TrabalhoFinal2016_1Parser.ComandoControleForContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitNumero(@NotNull TrabalhoFinal2016_1Parser.NumeroContext ctx) { }
+	@Override public void exitComandoControleFor(@NotNull TrabalhoFinal2016_1Parser.ComandoControleForContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterDeclaracao_Arrays(@NotNull TrabalhoFinal2016_1Parser.Declaracao_ArraysContext ctx) { }
+	@Override public void enterListaExpressoesExpr(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitDeclaracao_Arrays(@NotNull TrabalhoFinal2016_1Parser.Declaracao_ArraysContext ctx) { }
+	@Override public void exitListaExpressoesExpr(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesExprContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterOprelacional(@NotNull TrabalhoFinal2016_1Parser.OprelacionalContext ctx) { }
+	@Override public void enterTipoReal(@NotNull TrabalhoFinal2016_1Parser.TipoRealContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitOprelacional(@NotNull TrabalhoFinal2016_1Parser.OprelacionalContext ctx) { }
+	@Override public void exitTipoReal(@NotNull TrabalhoFinal2016_1Parser.TipoRealContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterNome_funcao(@NotNull TrabalhoFinal2016_1Parser.Nome_funcaoContext ctx) { }
+	@Override public void enterListaArrays(@NotNull TrabalhoFinal2016_1Parser.ListaArraysContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitNome_funcao(@NotNull TrabalhoFinal2016_1Parser.Nome_funcaoContext ctx) { }
+	@Override public void exitListaArrays(@NotNull TrabalhoFinal2016_1Parser.ListaArraysContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterChamada_funcao(@NotNull TrabalhoFinal2016_1Parser.Chamada_funcaoContext ctx) { }
+	@Override public void enterNumeroInteiro(@NotNull TrabalhoFinal2016_1Parser.NumeroInteiroContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitChamada_funcao(@NotNull TrabalhoFinal2016_1Parser.Chamada_funcaoContext ctx) { }
+	@Override public void exitNumeroInteiro(@NotNull TrabalhoFinal2016_1Parser.NumeroInteiroContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterTipo(@NotNull TrabalhoFinal2016_1Parser.TipoContext ctx) { }
+	@Override public void enterExprID(@NotNull TrabalhoFinal2016_1Parser.ExprIDContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitTipo(@NotNull TrabalhoFinal2016_1Parser.TipoContext ctx) { }
+	@Override public void exitExprID(@NotNull TrabalhoFinal2016_1Parser.ExprIDContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterDeclaracao(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoContext ctx) { }
+	@Override public void enterReturn(@NotNull TrabalhoFinal2016_1Parser.ReturnContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitDeclaracao(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoContext ctx) { }
+	@Override public void exitReturn(@NotNull TrabalhoFinal2016_1Parser.ReturnContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterDeclaracaoVar(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVarContext ctx) { }
+	@Override public void enterListaParam(@NotNull TrabalhoFinal2016_1Parser.ListaParamContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitDeclaracaoVar(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVarContext ctx) { }
+	@Override public void exitListaParam(@NotNull TrabalhoFinal2016_1Parser.ListaParamContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void enterArray(@NotNull TrabalhoFinal2016_1Parser.ArrayContext ctx) { }
+	@Override public void enterTipoInt(@NotNull TrabalhoFinal2016_1Parser.TipoIntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
-	@Override public void exitArray(@NotNull TrabalhoFinal2016_1Parser.ArrayContext ctx) { }
+	@Override public void exitTipoInt(@NotNull TrabalhoFinal2016_1Parser.TipoIntContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComandoAtribuicao(@NotNull TrabalhoFinal2016_1Parser.ComandoAtribuicaoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComandoAtribuicao(@NotNull TrabalhoFinal2016_1Parser.ComandoAtribuicaoContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterExprArray(@NotNull TrabalhoFinal2016_1Parser.ExprArrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitExprArray(@NotNull TrabalhoFinal2016_1Parser.ExprArrayContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComandoRetorno(@NotNull TrabalhoFinal2016_1Parser.ComandoRetornoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComandoRetorno(@NotNull TrabalhoFinal2016_1Parser.ComandoRetornoContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterIdentificador(@NotNull TrabalhoFinal2016_1Parser.IdentificadorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitIdentificador(@NotNull TrabalhoFinal2016_1Parser.IdentificadorContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterValorBoolean(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitValorBoolean(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComandoControleWhile(@NotNull TrabalhoFinal2016_1Parser.ComandoControleWhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComandoControleWhile(@NotNull TrabalhoFinal2016_1Parser.ComandoControleWhileContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ChamadaFuncaoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ChamadaFuncaoContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterListaExpressoes(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitListaExpressoes(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterPrelacionalExpr(@NotNull TrabalhoFinal2016_1Parser.PrelacionalExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitPrelacionalExpr(@NotNull TrabalhoFinal2016_1Parser.PrelacionalExprContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterMain(@NotNull TrabalhoFinal2016_1Parser.MainContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitMain(@NotNull TrabalhoFinal2016_1Parser.MainContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComandoControle(@NotNull TrabalhoFinal2016_1Parser.ComandoControleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComandoControle(@NotNull TrabalhoFinal2016_1Parser.ComandoControleContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterParamVazio(@NotNull TrabalhoFinal2016_1Parser.ParamVazioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitParamVazio(@NotNull TrabalhoFinal2016_1Parser.ParamVazioContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterDeclaarcaoVariaveis(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoVariaveisContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitDeclaarcaoVariaveis(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoVariaveisContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterExprSomaSub(@NotNull TrabalhoFinal2016_1Parser.ExprSomaSubContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitExprSomaSub(@NotNull TrabalhoFinal2016_1Parser.ExprSomaSubContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterDeclaarcaoConstantes(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoConstantesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitDeclaarcaoConstantes(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoConstantesContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterExprMultDiv(@NotNull TrabalhoFinal2016_1Parser.ExprMultDivContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitExprMultDiv(@NotNull TrabalhoFinal2016_1Parser.ExprMultDivContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterParameter(@NotNull TrabalhoFinal2016_1Parser.ParameterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitParameter(@NotNull TrabalhoFinal2016_1Parser.ParameterContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComandoExit(@NotNull TrabalhoFinal2016_1Parser.ComandoExitContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComandoExit(@NotNull TrabalhoFinal2016_1Parser.ComandoExitContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterAtribuicaodeArray(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeArrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitAtribuicaodeArray(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeArrayContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterDeclaracaoArray(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoArrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitDeclaracaoArray(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoArrayContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterListaArraysArray(@NotNull TrabalhoFinal2016_1Parser.ListaArraysArrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitListaArraysArray(@NotNull TrabalhoFinal2016_1Parser.ListaArraysArrayContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterVariavel(@NotNull TrabalhoFinal2016_1Parser.VariavelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitVariavel(@NotNull TrabalhoFinal2016_1Parser.VariavelContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterExprParenteses(@NotNull TrabalhoFinal2016_1Parser.ExprParentesesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitExprParenteses(@NotNull TrabalhoFinal2016_1Parser.ExprParentesesContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComandoControleIf(@NotNull TrabalhoFinal2016_1Parser.ComandoControleIfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComandoControleIf(@NotNull TrabalhoFinal2016_1Parser.ComandoControleIfContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterFunction(@NotNull TrabalhoFinal2016_1Parser.FunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitFunction(@NotNull TrabalhoFinal2016_1Parser.FunctionContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterExprValor(@NotNull TrabalhoFinal2016_1Parser.ExprValorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitExprValor(@NotNull TrabalhoFinal2016_1Parser.ExprValorContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterNumeroReal(@NotNull TrabalhoFinal2016_1Parser.NumeroRealContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitNumeroReal(@NotNull TrabalhoFinal2016_1Parser.NumeroRealContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterCondiicoesINT(@NotNull TrabalhoFinal2016_1Parser.CondiicoesINTContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitCondiicoesINT(@NotNull TrabalhoFinal2016_1Parser.CondiicoesINTContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComadoReadArrays(@NotNull TrabalhoFinal2016_1Parser.ComadoReadArraysContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComadoReadArrays(@NotNull TrabalhoFinal2016_1Parser.ComadoReadArraysContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterOprelacionalNot(@NotNull TrabalhoFinal2016_1Parser.OprelacionalNotContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitOprelacionalNot(@NotNull TrabalhoFinal2016_1Parser.OprelacionalNotContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterComandoPrint(@NotNull TrabalhoFinal2016_1Parser.ComandoPrintContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitComandoPrint(@NotNull TrabalhoFinal2016_1Parser.ComandoPrintContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterCondicoesID(@NotNull TrabalhoFinal2016_1Parser.CondicoesIDContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitCondicoesID(@NotNull TrabalhoFinal2016_1Parser.CondicoesIDContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterNomeFuncao(@NotNull TrabalhoFinal2016_1Parser.NomeFuncaoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitNomeFuncao(@NotNull TrabalhoFinal2016_1Parser.NomeFuncaoContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -1,4 +1,6 @@
-// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construção de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
+package grammarFiles;
+
+// Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Construï¿½ï¿½o de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -11,39 +13,46 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface TrabalhoFinal2016_1Visitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_arrays}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ArrayID}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLista_arrays(@NotNull TrabalhoFinal2016_1Parser.Lista_arraysContext ctx);
+	T visitArrayID(@NotNull TrabalhoFinal2016_1Parser.ArrayIDContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atrib_var}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoVariavel}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCmd_atrib_var(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_varContext ctx);
+	T visitDeclaracaoVariavel(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVariavelContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atribuicao}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#controleElse}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCmd_atribuicao(@NotNull TrabalhoFinal2016_1Parser.Cmd_atribuicaoContext ctx);
+	T visitControleElse(@NotNull TrabalhoFinal2016_1Parser.ControleElseContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#condicoes}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoString}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCondicoes(@NotNull TrabalhoFinal2016_1Parser.CondicoesContext ctx);
+	T visitTipoString(@NotNull TrabalhoFinal2016_1Parser.TipoStringContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#var}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoBreak}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVar(@NotNull TrabalhoFinal2016_1Parser.VarContext ctx);
+	T visitComandoBreak(@NotNull TrabalhoFinal2016_1Parser.ComandoBreakContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacionalBinario}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOprelacionalBinario(@NotNull TrabalhoFinal2016_1Parser.OprelacionalBinarioContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorString}.
@@ -53,6 +62,13 @@ public interface TrabalhoFinal2016_1Visitor<T> extends ParseTreeVisitor<T> {
 	T visitValorString(@NotNull TrabalhoFinal2016_1Parser.ValorStringContext ctx);
 
 	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoArrays}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaarcaoArrays(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoArraysContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoConstante}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -60,11 +76,25 @@ public interface TrabalhoFinal2016_1Visitor<T> extends ParseTreeVisitor<T> {
 	T visitDeclaracaoConstante(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoConstanteContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#expr}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprNegativo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpr(@NotNull TrabalhoFinal2016_1Parser.ExprContext ctx);
+	T visitExprNegativo(@NotNull TrabalhoFinal2016_1Parser.ExprNegativoContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comadoRead}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComadoRead(@NotNull TrabalhoFinal2016_1Parser.ComadoReadContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtribuicaodeVariavel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtribuicaodeVariavel(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeVariavelContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorInteiro}.
@@ -74,67 +104,39 @@ public interface TrabalhoFinal2016_1Visitor<T> extends ParseTreeVisitor<T> {
 	T visitValorInteiro(@NotNull TrabalhoFinal2016_1Parser.ValorInteiroContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#funcao}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtributionVar}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFuncao(@NotNull TrabalhoFinal2016_1Parser.FuncaoContext ctx);
+	T visitAtributionVar(@NotNull TrabalhoFinal2016_1Parser.AtributionVarContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#principal}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtributionArray}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrincipal(@NotNull TrabalhoFinal2016_1Parser.PrincipalContext ctx);
+	T visitAtributionArray(@NotNull TrabalhoFinal2016_1Parser.AtributionArrayContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorBooleano}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoChamadaFuncao}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitValorBooleano(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanoContext ctx);
+	T visitComandoChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ComandoChamadaFuncaoContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_atrib_array}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ConstanteID}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCmd_atrib_array(@NotNull TrabalhoFinal2016_1Parser.Cmd_atrib_arrayContext ctx);
+	T visitConstanteID(@NotNull TrabalhoFinal2016_1Parser.ConstanteIDContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_expr}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoBoolean}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLista_expr(@NotNull TrabalhoFinal2016_1Parser.Lista_exprContext ctx);
-
-	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_controle}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCmd_controle(@NotNull TrabalhoFinal2016_1Parser.Cmd_controleContext ctx);
-
-	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaIDsID}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitListaIDsID(@NotNull TrabalhoFinal2016_1Parser.ListaIDsIDContext ctx);
-
-	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#cmd_return}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCmd_return(@NotNull TrabalhoFinal2016_1Parser.Cmd_returnContext ctx);
-
-	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandos}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitComandos(@NotNull TrabalhoFinal2016_1Parser.ComandosContext ctx);
+	T visitTipoBoolean(@NotNull TrabalhoFinal2016_1Parser.TipoBooleanContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Body}.
@@ -144,18 +146,18 @@ public interface TrabalhoFinal2016_1Visitor<T> extends ParseTreeVisitor<T> {
 	T visitBody(@NotNull TrabalhoFinal2016_1Parser.BodyContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#lista_de_parametros}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Param}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLista_de_parametros(@NotNull TrabalhoFinal2016_1Parser.Lista_de_parametrosContext ctx);
+	T visitParam(@NotNull TrabalhoFinal2016_1Parser.ParamContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#constante}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ArrayINT}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitConstante(@NotNull TrabalhoFinal2016_1Parser.ConstanteContext ctx);
+	T visitArrayINT(@NotNull TrabalhoFinal2016_1Parser.ArrayINTContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaIDs}.
@@ -165,13 +167,6 @@ public interface TrabalhoFinal2016_1Visitor<T> extends ParseTreeVisitor<T> {
 	T visitListaIDs(@NotNull TrabalhoFinal2016_1Parser.ListaIDsContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#parametro}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParametro(@NotNull TrabalhoFinal2016_1Parser.ParametroContext ctx);
-
-	/**
 	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorReal}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -179,65 +174,296 @@ public interface TrabalhoFinal2016_1Visitor<T> extends ParseTreeVisitor<T> {
 	T visitValorReal(@NotNull TrabalhoFinal2016_1Parser.ValorRealContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#numero}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleFor}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNumero(@NotNull TrabalhoFinal2016_1Parser.NumeroContext ctx);
+	T visitComandoControleFor(@NotNull TrabalhoFinal2016_1Parser.ComandoControleForContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#declaracao_Arrays}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaExpressoesExpr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDeclaracao_Arrays(@NotNull TrabalhoFinal2016_1Parser.Declaracao_ArraysContext ctx);
+	T visitListaExpressoesExpr(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesExprContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacional}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoReal}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOprelacional(@NotNull TrabalhoFinal2016_1Parser.OprelacionalContext ctx);
+	T visitTipoReal(@NotNull TrabalhoFinal2016_1Parser.TipoRealContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#nome_funcao}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaArrays}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNome_funcao(@NotNull TrabalhoFinal2016_1Parser.Nome_funcaoContext ctx);
+	T visitListaArrays(@NotNull TrabalhoFinal2016_1Parser.ListaArraysContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#chamada_funcao}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#numeroInteiro}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitChamada_funcao(@NotNull TrabalhoFinal2016_1Parser.Chamada_funcaoContext ctx);
+	T visitNumeroInteiro(@NotNull TrabalhoFinal2016_1Parser.NumeroInteiroContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipo}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprID}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTipo(@NotNull TrabalhoFinal2016_1Parser.TipoContext ctx);
+	T visitExprID(@NotNull TrabalhoFinal2016_1Parser.ExprIDContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#declaracao}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Return}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDeclaracao(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoContext ctx);
+	T visitReturn(@NotNull TrabalhoFinal2016_1Parser.ReturnContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoVar}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaParam}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDeclaracaoVar(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoVarContext ctx);
+	T visitListaParam(@NotNull TrabalhoFinal2016_1Parser.ListaParamContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#array}.
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#tipoInt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitArray(@NotNull TrabalhoFinal2016_1Parser.ArrayContext ctx);
+	T visitTipoInt(@NotNull TrabalhoFinal2016_1Parser.TipoIntContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoAtribuicao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComandoAtribuicao(@NotNull TrabalhoFinal2016_1Parser.ComandoAtribuicaoContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprArray}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprArray(@NotNull TrabalhoFinal2016_1Parser.ExprArrayContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoRetorno}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComandoRetorno(@NotNull TrabalhoFinal2016_1Parser.ComandoRetornoContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Identificador}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdentificador(@NotNull TrabalhoFinal2016_1Parser.IdentificadorContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ValorBoolean}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitValorBoolean(@NotNull TrabalhoFinal2016_1Parser.ValorBooleanContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleWhile}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComandoControleWhile(@NotNull TrabalhoFinal2016_1Parser.ComandoControleWhileContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#chamadaFuncao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitChamadaFuncao(@NotNull TrabalhoFinal2016_1Parser.ChamadaFuncaoContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ListaExpressoes}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListaExpressoes(@NotNull TrabalhoFinal2016_1Parser.ListaExpressoesContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#prelacionalExpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrelacionalExpr(@NotNull TrabalhoFinal2016_1Parser.PrelacionalExprContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Main}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMain(@NotNull TrabalhoFinal2016_1Parser.MainContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControle}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComandoControle(@NotNull TrabalhoFinal2016_1Parser.ComandoControleContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#ParamVazio}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParamVazio(@NotNull TrabalhoFinal2016_1Parser.ParamVazioContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoVariaveis}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaarcaoVariaveis(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoVariaveisContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprSomaSub}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprSomaSub(@NotNull TrabalhoFinal2016_1Parser.ExprSomaSubContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaarcaoConstantes}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaarcaoConstantes(@NotNull TrabalhoFinal2016_1Parser.DeclaarcaoConstantesContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprMultDiv}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprMultDiv(@NotNull TrabalhoFinal2016_1Parser.ExprMultDivContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Parameter}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameter(@NotNull TrabalhoFinal2016_1Parser.ParameterContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoExit}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComandoExit(@NotNull TrabalhoFinal2016_1Parser.ComandoExitContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#AtribuicaodeArray}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtribuicaodeArray(@NotNull TrabalhoFinal2016_1Parser.AtribuicaodeArrayContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#DeclaracaoArray}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaracaoArray(@NotNull TrabalhoFinal2016_1Parser.DeclaracaoArrayContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#listaArraysArray}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListaArraysArray(@NotNull TrabalhoFinal2016_1Parser.ListaArraysArrayContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Variavel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariavel(@NotNull TrabalhoFinal2016_1Parser.VariavelContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprParenteses}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprParenteses(@NotNull TrabalhoFinal2016_1Parser.ExprParentesesContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoControleIf}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComandoControleIf(@NotNull TrabalhoFinal2016_1Parser.ComandoControleIfContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#Function}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction(@NotNull TrabalhoFinal2016_1Parser.FunctionContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#exprValor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprValor(@NotNull TrabalhoFinal2016_1Parser.ExprValorContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#numeroReal}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumeroReal(@NotNull TrabalhoFinal2016_1Parser.NumeroRealContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#CondiicoesINT}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondiicoesINT(@NotNull TrabalhoFinal2016_1Parser.CondiicoesINTContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comadoReadArrays}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComadoReadArrays(@NotNull TrabalhoFinal2016_1Parser.ComadoReadArraysContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#oprelacionalNot}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOprelacionalNot(@NotNull TrabalhoFinal2016_1Parser.OprelacionalNotContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#comandoPrint}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComandoPrint(@NotNull TrabalhoFinal2016_1Parser.ComandoPrintContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#CondicoesID}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondicoesID(@NotNull TrabalhoFinal2016_1Parser.CondicoesIDContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link TrabalhoFinal2016_1Parser#NomeFuncao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNomeFuncao(@NotNull TrabalhoFinal2016_1Parser.NomeFuncaoContext ctx);
 }
