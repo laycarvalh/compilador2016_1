@@ -1,4 +1,4 @@
-package grammarFiles;
+﻿package grammarFiles;
 
 // Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Constru��o de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
 
@@ -6,6 +6,15 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
+
+
+//blalblalfdjslafjaçfhjçafgfhgfhgfhf
+
+
+
+
+
+
 
 /**
  * This class provides an empty implementation of {@link TrabalhoFinal2016_1Listener},
