@@ -96,13 +96,13 @@ cmd_atrib_array : array '=' expr ';'  #AtribuicaodeArray
 
 
 oprelacional : '!' oprelacional  #oprelacionalNot
-             | oprelacional ('>'|'<'|'>='|'<='|'=='|'!='| '<>') oprelacional #oprelacionalBinario
+             | oprelacional o= ('>'|'<'|'>='|'<='|'=='|'!='| '<>') oprelacional #oprelacionalBinario
              | expr #prelacionalExpr
     ;
 
 expr : '-' expr #exprNegativo
-     | expr s= ('*'|'/') expr #exprMultDiv
-     | expr ('+'|'-') expr #exprSomaSub
+     | expr m= ('*'|'/') expr #exprMultDiv
+     | expr s= ('+'|'-') expr #exprSomaSub
      | valor #exprValor
      | ID #exprID
      | array #exprArray

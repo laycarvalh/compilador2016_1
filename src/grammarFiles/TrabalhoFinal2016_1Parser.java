@@ -1,5 +1,4 @@
 package grammarFiles;
-
 // Generated from C:\Users\layca\Google Drive\UNIVERSIDADE\2016.1\Constru��o de Compiladores\Trabalho Final 2016.1\TrabalhoFinal2016_1.g4 by ANTLR 4.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -2469,6 +2468,7 @@ public class TrabalhoFinal2016_1Parser extends Parser {
 		}
 	}
 	public static class OprelacionalBinarioContext extends OprelacionalContext {
+		public Token o;
 		public OprelacionalContext oprelacional(int i) {
 			return getRuleContext(OprelacionalContext.class,i);
 		}
@@ -2566,9 +2566,10 @@ public class TrabalhoFinal2016_1Parser extends Parser {
 					setState(305);
 					if (!(2 >= _localctx._p)) throw new FailedPredicateException(this, "2 >= $_p");
 					setState(306);
+					((OprelacionalBinarioContext)_localctx).o = _input.LT(1);
 					_la = _input.LA(1);
 					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << 14) | (1L << 16) | (1L << 17) | (1L << 29) | (1L << 33) | (1L << 36) | (1L << 38))) != 0)) ) {
-					_errHandler.recoverInline(this);
+						((OprelacionalBinarioContext)_localctx).o = (Token)_errHandler.recoverInline(this);
 					}
 					consume();
 					setState(307); oprelacional(3);
@@ -2663,6 +2664,7 @@ public class TrabalhoFinal2016_1Parser extends Parser {
 		}
 	}
 	public static class ExprSomaSubContext extends ExprContext {
+		public Token s;
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
 		}
@@ -2704,7 +2706,7 @@ public class TrabalhoFinal2016_1Parser extends Parser {
 		}
 	}
 	public static class ExprMultDivContext extends ExprContext {
-		public Token s;
+		public Token m;
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
 		}
@@ -2827,10 +2829,10 @@ public class TrabalhoFinal2016_1Parser extends Parser {
 						setState(325);
 						if (!(6 >= _localctx._p)) throw new FailedPredicateException(this, "6 >= $_p");
 						setState(326);
-						((ExprMultDivContext)_localctx).s = _input.LT(1);
+						((ExprMultDivContext)_localctx).m = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==8 || _la==37) ) {
-							((ExprMultDivContext)_localctx).s = (Token)_errHandler.recoverInline(this);
+							((ExprMultDivContext)_localctx).m = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
 						setState(327); expr(7);
@@ -2844,9 +2846,10 @@ public class TrabalhoFinal2016_1Parser extends Parser {
 						setState(328);
 						if (!(5 >= _localctx._p)) throw new FailedPredicateException(this, "5 >= $_p");
 						setState(329);
+						((ExprSomaSubContext)_localctx).s = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==7 || _la==26) ) {
-						_errHandler.recoverInline(this);
+							((ExprSomaSubContext)_localctx).s = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
 						setState(330); expr(6);
