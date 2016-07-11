@@ -28,8 +28,8 @@ public class Teste {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         TrabalhoFinal2016_1Parser parser = new TrabalhoFinal2016_1Parser(tokens);
         ParseTree tree = parser.prog();
+        System.out.println(tree.getText());
         GrammarVisitor visitor = new GrammarVisitor();
         visitor.visit(tree);
-        System.out.println(visitor.visit(tree));
     }
 }
