@@ -597,6 +597,10 @@ public class GrammarVisitor extends TrabalhoFinal2016_1BaseVisitor<AST> {
         return noFor;
     }
 
+     public AST getAST() {
+        return noClass;
+    }
+
     public AST visitCondicoesID(TrabalhoFinal2016_1Parser.CondicoesIDContext ctx) {
         return visit(ctx.ID());
     }
@@ -676,34 +680,35 @@ public class GrammarVisitor extends TrabalhoFinal2016_1BaseVisitor<AST> {
         oprelacional.adicionaFilho(expr2);
         return oprelacional;
     }
+
     public AST visitOprelacionalExpr(TrabalhoFinal2016_1Parser.PrelacionalExprContext ctx) {
         return visit(ctx.expr());
     }
-    
+
     public AST visitNumeroInteiro(TrabalhoFinal2016_1Parser.NumeroInteiroContext ctx) {
         return visit(ctx.INT());
     }
-    
+
     public AST visitNumeroReal(TrabalhoFinal2016_1Parser.NumeroRealContext ctx) {
         return visit(ctx.REAL());
     }
 
-     public AST visitMain(TrabalhoFinal2016_1Parser.MainContext ctx){
+    public AST visitMain(TrabalhoFinal2016_1Parser.MainContext ctx) {
         int i = 0;
         AST noMain = new AST("main");
         noMain.setLinha(ctx.getStart().getLine());
         AST comandos;
-        try{
+        try {
             comandos = visit(ctx.comandos(i));
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             comandos = null;
         }
-        while (comandos != null){
+        while (comandos != null) {
             noMain.adicionaFilho(comandos);
             i++;
-            try{
+            try {
                 comandos = visit(ctx.comandos(i));
-            }catch(NullPointerException e){
+            } catch (NullPointerException e) {
                 comandos = null;
             }
         }

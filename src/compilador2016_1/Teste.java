@@ -19,17 +19,19 @@ import org.antlr.v4.runtime.tree.ParseTree;
  * @author layca
  */
 public class Teste {
-    public static void main(String []args) throws Exception{
-        String inputFile = "C:\\Users\\layca\\Google Drive\\UNIVERSIDADE\\2016.1\\Construção de Compiladores\\Trabalho Final 2016.1\\testeTF";
-        File arquivo = new File(inputFile);
-        InputStream is = new FileInputStream(arquivo);
-        ANTLRInputStream input = new ANTLRInputStream(is);
-        TrabalhoFinal2016_1Lexer lexer = new TrabalhoFinal2016_1Lexer(input); // Alterar para nome do lexer
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        TrabalhoFinal2016_1Parser parser = new TrabalhoFinal2016_1Parser(tokens);
-        ParseTree tree = parser.prog();
-        System.out.println(tree.getText());
-        GrammarVisitor visitor = new GrammarVisitor();
-        visitor.visit(tree);
-    }
+//    public static void main(String []args) throws Exception{
+//        String inputFile = "C:\\Users\\layca\\Google Drive\\UNIVERSIDADE\\2016.1\\Construção de Compiladores\\Trabalho Final 2016.1\\testeTF";
+//        File arquivo = new File(inputFile);
+//        InputStream is = new FileInputStream(arquivo);
+//        ANTLRInputStream input = new ANTLRInputStream(is);
+//        TrabalhoFinal2016_1Lexer lexer = new TrabalhoFinal2016_1Lexer(input); // Alterar para nome do lexer
+//        CommonTokenStream tokens = new CommonTokenStream(lexer);
+//        TrabalhoFinal2016_1Parser parser = new TrabalhoFinal2016_1Parser(tokens);
+//        ParseTree tree = parser.prog();
+//        System.out.println(tree.getText());
+//        GrammarVisitor visitor = new GrammarVisitor();
+//        visitor.visit(tree);
+//        
+//        TabelaDeSimbolos tabela = new TabelaDeSimbolos(ast)
+//    }
 }

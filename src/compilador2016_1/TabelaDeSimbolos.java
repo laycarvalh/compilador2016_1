@@ -1,4 +1,5 @@
 package compilador2016_1;
+
 /**
  *
  * @author layca
@@ -13,8 +14,11 @@ import ast.AST;
 public class TabelaDeSimbolos {
 
     private AST ast;
+
     private Map<String, Retornos> declaracoes;
+
     private Map<String, HashMap<String, Retornos>> funcoes;
+
     private Map<String, String> tipo_funcaoMap;
 
     public TabelaDeSimbolos(AST ast) {
@@ -50,7 +54,7 @@ public class TabelaDeSimbolos {
 
     public void imprimeDeclaracoes() {
         for (String chave : this.declaracoes.keySet()) {
-            System.out.println("chave:" + chave);
+            System.out.println("chave_global:" + chave);
             System.out.println("Retornos: ");
             this.declaracoes.get(chave).imprimeRetornos();
         }
@@ -76,7 +80,7 @@ public class TabelaDeSimbolos {
         }
     }
 
-    public boolean verificaSeExisteDeclaracaoDeVariaveis(String nome) {
+    public boolean verificaSeExisteDeclaracaoVariaveisGlobais(String nome) {
         if (this.getDeclaracoes().containsKey(nome + "_var")) {
             return true;
         } else {
@@ -84,20 +88,37 @@ public class TabelaDeSimbolos {
         }
     }
 
-    public boolean verificaSeExisteDeclaracaoDeConstantes(String nome) {
+    public boolean verificaSeFoiDeclaradoVariaveisLocais(String variavel, String anotacao) {
+        if (this.getFuncoes().get(anotacao).containsKey(variavel + "_var")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean verificaSeExisteDeclaracaoConstantes(String nome) {
         if (this.getDeclaracoes().containsKey(nome + "_const")) {
             return true;
         } else {
             return false;
         }
     }
-    public boolean verificaSeExisteDeclaracaoDeArrays(String nome) {
+    public boolean verificaSeExisteDeclaracaoArrays(String nome) {
         if (this.getDeclaracoes().containsKey(nome + "_array")) {
             return true;
         } else {
             return false;
         }
     }
+
+    public HashMap<String, Retornos> retornaDeclaracoesLocais(String anotacao) {
+        return this.getFuncoes().get(anotacao);
+    }
+
+    public Retornos retornaVariavelLocal(String anotacao, String variavel) {
+        return this.retornaDeclaracoesLocais(anotacao).get(variavel + "_var");
+    }
+
 
     public boolean verificaSeExisteFuncaoComMesmaAnotacao(String anotacao) {
         if (this.getFuncoes().get(anotacao) != null) {
