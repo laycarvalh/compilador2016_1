@@ -17,5 +17,11 @@ public class ChecadorDeTipos {
 	public ChecadorDeTipos(GeradorDeCodigo geradorDeCodigo) {
 		this.geradorDeCodigo = geradorDeCodigo;
 	}
+        
+        public Retornos checaTipoConstante(String tipo, String valor, AST noConstante){
+            Retornos retorno = new Retornos();
+            
+            return retorno;
+        }
     
 }

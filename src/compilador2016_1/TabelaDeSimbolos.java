@@ -115,9 +115,9 @@ public class TabelaDeSimbolos {
         return this.getFuncoes().get(anotacao);
     }
 
-    public Retornos retornaVariavelLocal(String anotacao, String variavel) {
-        return this.retornaDeclaracoesLocais(anotacao).get(variavel + "_var");
-    }
+//    public Retornos retornaVariavelLocal(String anotacao, String variavel) {
+//        return this.retornaDeclaracoesLocais(anotacao).get(variavel + "_var");
+//    }
 
 
     public boolean verificaSeExisteFuncaoComMesmaAnotacao(String anotacao) {
