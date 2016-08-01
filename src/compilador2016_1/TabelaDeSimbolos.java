@@ -115,11 +115,15 @@ public class TabelaDeSimbolos {
         return this.getFuncoes().get(anotacao);
     }
 
-//    public Retornos retornaVariavelLocal(String anotacao, String variavel) {
-//        return this.retornaDeclaracoesLocais(anotacao).get(variavel + "_var");
-//    }
-
-
+    public Retornos retornaVariavelLocal(String anotacao, String variavel) {
+        return this.retornaDeclaracoesLocais(anotacao).get(variavel + "_var");
+    }
+    	public Retornos retornaConstantes(String anotacao, String cons){
+		return this.retornaDeclaracoesLocais(anotacao).get(cons+"_const");
+	}
+public Retornos retornaArrays(String anotacao, String cons){
+		return this.retornaDeclaracoesLocais(anotacao).get(cons+"_array");
+	}
     public boolean verificaSeExisteFuncaoComMesmaAnotacao(String anotacao) {
         if (this.getFuncoes().get(anotacao) != null) {
             return true;

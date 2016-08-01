@@ -40,7 +40,7 @@ public class AnaliseSemantica extends Exception {
         this.geradorDeCodigo = new GeradorDeCodigo(ast.getRotulo());
         this.check = new ChecadorDeTipos(geradorDeCodigo);
 
-        //preencheTabelaSimbolos();
+        preencheTabelaSimbolos();
         tabela.imprimeDeclaracoes();
         tabela.imprimeFuncoes();
     }
@@ -94,28 +94,28 @@ public class AnaliseSemantica extends Exception {
             for (AST noComandosDentrDaFuncao : noFuncao.getFilhos()) {
 
                 String rotuloAtual = noComandosDentrDaFuncao.getRotulo();
-//                if (rotuloAtual.equals("=")) {
-//                    testaAtribuicao(noComandosDentrDaFuncao, anotacao_funcao);
-//                } else if (rotuloAtual.equals("print")) {
-//                    AST filhoNoPrint = noComandosDentrDaFuncao.getFilhos().get(0);
-//                    testaPrint(filhoNoPrint, anotacao_funcao);
-//                } else if (rotuloAtual.equals("read")) {
-//                    AST filhoNoRead = noComandosDentrDaFuncao.getFilhos().get(0);
-//                    if (filhoNoRead != null) {
-//                        testaRead(filhoNoRead, anotacao_funcao);
-//                    } else {
-//                        throw new ErroComandoReadSemParametros("O comando read sem parâmetros em :" + noComandosDentrDaFuncao.getLinha(),
-//                                noComandosDentrDaFuncao.getLinha());
-//                    }
-//                } else if (rotuloAtual.equals("if")) {
-//                    testaIf(noComandosDentrDaFuncao, anotacao_funcao);
-//                } else if (rotuloAtual.equals("for")) {
-//                    testaComandos(noComandosDentrDaFuncao, anotacao_funcao);
-//                } else if (rotuloAtual.equals("while")) {
-//                    testaComandos(noComandosDentrDaFuncao, anotacao_funcao);
-//                } else if (rotuloAtual.equals("chamada_funcao")) {
-//                    testaChamadaFuncao(noComandosDentrDaFuncao, anotacao_funcao);
-//                }
+                if (rotuloAtual.equals("=")) {
+                    testaAtribuicao(noComandosDentrDaFuncao, anotacao_funcao);
+                } else if (rotuloAtual.equals("print")) {
+                    AST filhoNoPrint = noComandosDentrDaFuncao.getFilhos().get(0);
+                    testaPrint(filhoNoPrint, anotacao_funcao);
+                } else if (rotuloAtual.equals("read")) {
+                    AST filhoNoRead = noComandosDentrDaFuncao.getFilhos().get(0);
+                    if (filhoNoRead != null) {
+                        testaRead(filhoNoRead, anotacao_funcao);
+                    } else {
+                        throw new ErroComandoReadSemParametros("O comando read sem parâmetros em :" + noComandosDentrDaFuncao.getLinha(),
+                                noComandosDentrDaFuncao.getLinha());
+                    }
+                } else if (rotuloAtual.equals("if")) {
+                    testaIf(noComandosDentrDaFuncao, anotacao_funcao);
+                } else if (rotuloAtual.equals("for")) {
+                    testaComandos(noComandosDentrDaFuncao, anotacao_funcao);
+                } else if (rotuloAtual.equals("while")) {
+                    testaComandos(noComandosDentrDaFuncao, anotacao_funcao);
+                } else if (rotuloAtual.equals("chamada_funcao")) {
+                    testaChamadaFuncao(noComandosDentrDaFuncao, anotacao_funcao);
+                }
 
             }
         } else {
@@ -477,4 +477,500 @@ public class AnaliseSemantica extends Exception {
             throw new ErroVariavelDuplicada("Nome de variável ou constante duplicada na linha : " + noConstante.getLinha(), noConstante.getLinha());
         }
     }
+
+    private void testaAtribuicao(AST noAtribuicao, String anotacao_funcao) throws ErroVariavelNaoDelarada, 
+				ErroOperadorNot, ErroDeTipo, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel, IOException {
+        String tipoDeclarado;//armazena o tipo declarado em escopo global ou local
+        String ID = noAtribuicao.getFilhos().get(0).getRotulo();
+        if(tabela.verificaSeExisteDeclaracaoVariaveisGlobais(ID)){
+
+                Retornos variavelGlobal = tabela.getDeclaracoes().get(ID+"_var");
+                tipoDeclarado = variavelGlobal.getTipo();
+                AST subArvoreDireitaDaDeclaracao = noAtribuicao.getFilhos().get(1);
+                verificaExpressaoEmAtribuicao(subArvoreDireitaDaDeclaracao,anotacao_funcao,tipoDeclarado);
+
+        }else if(tabela.verificaSeExisteDeclaracaoArrays(ID)){
+
+                Retornos variavelGlobal = tabela.getDeclaracoes().get(ID+"_array");
+                tipoDeclarado = variavelGlobal.getTipo();
+                AST subArvoreDireitaDaDeclaracao = noAtribuicao.getFilhos().get(1);
+                verificaExpressaoEmAtribuicao(subArvoreDireitaDaDeclaracao,anotacao_funcao,tipoDeclarado);
+
+        }else{
+            throw new ErroVariavelNaoDelarada("Variavel "+
+                ID+
+                ""+//porque?
+                " não declarada em : "+
+                noAtribuicao.getLinha(),
+                noAtribuicao.getLinha());
+			
+        }
+    }
+    public void verificaExpressao(AST noExpr, String anotacao_funcao,String simboloRelacional, boolean entrouEmExprAritmetica, String tipoRetorno) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel{
+		
+		String rotuloAtual = noExpr.getRotulo();
+		
+		if(rotuloAtual.equals("+") ||
+		   rotuloAtual.equals("-") ||
+		   rotuloAtual.equals("*") ||
+		   rotuloAtual.equals("/") ){
+			
+			AST subarvoreEsquerda = noExpr.getFilhos().get(0);
+			AST subarvoreDireita = noExpr.getFilhos().get(1);
+			
+			verificaExpressao(subarvoreEsquerda, anotacao_funcao, simboloRelacional, true,tipoRetorno);
+			verificaExpressao(subarvoreDireita, anotacao_funcao, simboloRelacional, true,tipoRetorno);
+			
+		}else if(rotuloAtual.equals("!")) {
+			verificaOperadorRelacional(noExpr, anotacao_funcao,"boolean");
+			
+		}else if(rotuloAtual.equals("chamada_funcao") && !tipoRetorno.equals("")){
+			//tp.checarChamadaFuncao()
+			String anotacaoChamaFuncao = montarAnotacaoChamadaFuncao(noExpr, anotacao_funcao);
+			if(tabela.getTipo_funcaoMap().containsKey(anotacaoChamaFuncao)){
+				String tipoFuncaoChamada = tabela.getTipo_funcaoMap().get(anotacaoChamaFuncao);
+				if(tipoRetorno == tipoFuncaoChamada) return;
+				else if(tipoRetorno.equals("real") && tipoFuncaoChamada.equals("int")) return;
+				else throw new ErroTipoFuncaoIncompativel("A funcao com a anotacao "+anotacaoChamaFuncao+
+						" é do tipo "+tipoFuncaoChamada+" em :"+noExpr.getLinha(), noExpr.getLinha());
+			}else throw new ErroFuncaoNaoDeclarada("A função com anotação "+anotacaoChamaFuncao
+					+" não existe ou parametros de tipos incompatíveis em : "+noExpr.getLinha(),noExpr.getLinha());
+		}else if(rotuloAtual.equals("chamada_funcao") && tipoRetorno.equals("")){
+			//tp.checarChamadaFuncao()
+			String anotacaoChamaFuncao = montarAnotacaoChamadaFuncao(noExpr, anotacao_funcao);
+			if(tabela.getTipo_funcaoMap().containsKey(anotacaoChamaFuncao)){
+				return;
+			}else throw new ErroFuncaoNaoDeclarada("A função com anotação "+anotacaoChamaFuncao
+					+" não existe ou parametros de tipos incompatíveis em : "+noExpr.getLinha(),noExpr.getLinha());
+		}else if(!simboloRelacional.equals("")){
+			check.checaTipoExpressaoEmRelacional(tabela, anotacao_funcao, noExpr, simboloRelacional, entrouEmExprAritmetica);
+		}else{	
+			
+			check.checaTipoExpressaoEmPrint(tabela, anotacao_funcao, noExpr, entrouEmExprAritmetica);
+				
+			return;
+			
+		}
+	}
+    public void verificaOperadorRelacional(AST noOperador, String anotacao_funcao, String tipoRetoro) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel{
+		if(noOperador != null){
+			String rotuloAtual = noOperador.getRotulo();
+			AST subArvoreEsquerda, subArvoreDireita, noFilhoOperadorNot;
+			if(rotuloAtual.equals("==") ||
+			   rotuloAtual.equals("!=") ||
+			   rotuloAtual.equals("<>") ||
+			   rotuloAtual.equals(">")  ||
+			   rotuloAtual.equals(">=") ||
+			   rotuloAtual.equals("<")  ||
+			   rotuloAtual.equals("<=")){
+				subArvoreEsquerda = noOperador.getFilhos().get(0);
+				subArvoreDireita = noOperador.getFilhos().get(1);
+				verificaExpressao(subArvoreEsquerda, anotacao_funcao, rotuloAtual, false,tipoRetoro);
+				verificaExpressao(subArvoreDireita, anotacao_funcao,  rotuloAtual, false,tipoRetoro);
+				//"" significa que a expressão não está
+				// vinculada a atribuição, sendo assim a 
+				// a passagem do tipo do lado esquerdo de uma atribuição não é possível
+				
+			}else if(rotuloAtual.equals("!")){
+				//se o rótulo for o operador not, então verifica se o filho dele é um
+				//operador de comparação, como '==', '!=', '!', ou uma variável
+				noFilhoOperadorNot = noOperador.getFilhos().get(0);
+				verificaOperadorRelacional(noFilhoOperadorNot, anotacao_funcao,"boolean");
+			}else if(rotuloAtual.equals("chamada_funcao")){
+				String anotacao = montarAnotacaoChamadaFuncao(noOperador, anotacao_funcao);
+				if(tabela.getFuncoes().containsKey(anotacao)){
+					String tipo = tabela.getTipo_funcaoMap().get(anotacao);
+					String nomeChamadaFuncao = noOperador.getFilhos().get(0).getRotulo();
+					if(tipo == "boolean") return;
+					else throw new ErroTipoFuncaoIncompativel("A funcao "+nomeChamadaFuncao+" possui tipo "+tipo+" em : "
+							+noOperador.getLinha(), noOperador.getLinha());
+				}
+			}else{
+				//se acontecer de a operação relacional tiver apenas uma variável ou 'TRUE', 'FALSE', ou
+				//um valor qualquer, então checa se é boolean
+				check.checaTipoValorOperacaoRelacionalBoolean(noOperador, anotacao_funcao, tabela);
+			}
+		}
+	}
+    public void verificaExpressaoEmAtribuicao(AST no, String anotacao_funcao, String tipo) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel, IOException{
+		
+		String rotuloAtual = no.getRotulo();
+		
+		if(rotuloAtual.equals("+") ||
+		   rotuloAtual.equals("-") ||
+		   rotuloAtual.equals("*") ||
+		   rotuloAtual.equals("/") ){
+			
+			AST subarvoreEsquerda = no.getFilhos().get(0);
+			AST subarvoreDireita = no.getFilhos().get(1);
+			
+			// se esse passo não gerar exceção então o operando da esquerda é do tipo certo
+			verificaExpressaoEmAtribuicao(subarvoreEsquerda, anotacao_funcao, tipo);
+			// se esse passo não gerar exceção então o operando da direita é do tipo certo
+			verificaExpressaoEmAtribuicao(subarvoreDireita, anotacao_funcao, tipo);
+			
+			geradorDeCodigo.criarOperacaoMatematica(rotuloAtual, tipo);
+			
+		}else if(rotuloAtual.equals("!")) {
+			
+			check.checaTipoExprNot(no, tipo);
+			
+			verificaOperadorRelacional(no, anotacao_funcao, "boolean");
+			
+			return;
+			
+		}else if(rotuloAtual.equals("chamada_funcao")){
+			//tp.checarChamadaFuncao()
+			String anotacaoChamaFuncao = montarAnotacaoChamadaFuncao(no, anotacao_funcao);
+			if(tabela.getTipo_funcaoMap().containsKey(anotacaoChamaFuncao)){
+				String tipoFuncaoChamada = tabela.getTipo_funcaoMap().get(anotacaoChamaFuncao);
+				if(tipo == tipoFuncaoChamada) return;
+				else if(tipo.equals("real") && tipoFuncaoChamada.equals("int")) return;
+				else throw new ErroTipoFuncaoIncompativel("A funcao com a anotacao "+anotacaoChamaFuncao+
+						" é do tipo "+tipoFuncaoChamada+" em :"+no.getLinha(), no.getLinha());
+			}else throw new ErroFuncaoNaoDeclarada("A função com anotação "+anotacaoChamaFuncao
+					+" não existe ou parametros de tipos incompatíveis em : "+no.getLinha(),no.getLinha());
+		}else{
+			check.checaTipoExpressaoAtribuicao(tabela, anotacao_funcao, no, tipo);
+			return;
+			
+		}
+	}
+    public String montarAnotacaoChamadaFuncao(AST noChamadaFuncao, String anotacao) throws ErroVariavelNaoDelarada, ErroOperadorNot, ErroDeTipo, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel{
+		String nomeFuncao = noChamadaFuncao.getFilhos().get(0).getRotulo();
+		String anotacaoMontada = "";
+		AST filhoLadoDireito = noChamadaFuncao.getFilhos().get(1);
+		String tipo = montarParametrosAnotacaoFuncao(filhoLadoDireito, anotacao);
+		anotacaoMontada = nomeFuncao+tipo;
+		return anotacaoMontada;
+	}
+	
+	public String montarParametrosAnotacaoFuncao(AST parametroChamadaFuncao, String anotacao) throws ErroDeTipo, ErroVariavelNaoDelarada, ErroOperadorNot, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel{
+		AST filhoEsquerdo, filhoDireito;
+		String rotulo = parametroChamadaFuncao.getRotulo(), tipo = "", anotacaoMontada = "";
+		
+		if(rotulo != "," && !rotulo.equals("")){
+			if( !rotulo.equals("+") &&
+				!rotulo.equals("-") &&
+				!rotulo.equals("/") && 
+				!rotulo.equals("*") &&
+				!rotulo.equals("!")){
+				if(tabela.verificaSeExisteDeclaracaoConstantes(rotulo)){
+					tipo = tabela.getDeclaracoes().get(rotulo+"_const").getTipo();
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}else if(tabela.verificaSeExisteDeclaracaoArrays(rotulo)){
+					tipo = tabela.getDeclaracoes().get(rotulo+"_array").getTipo();
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}else if(tabela.verificaSeExisteDeclaracaoVariaveisGlobais(rotulo)){
+					tipo = tabela.getDeclaracoes().get(rotulo+"_var").getTipo();
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}else if(rotulo.charAt(0)=='0' ||
+						 rotulo.charAt(0)=='1' ||
+						 rotulo.charAt(0)=='2' ||
+						 rotulo.charAt(0)=='3' ||
+						 rotulo.charAt(0)=='4' ||
+						 rotulo.charAt(0)=='5' ||
+						 rotulo.charAt(0)=='6' ||
+						 rotulo.charAt(0)=='7' ||
+						 rotulo.charAt(0)=='8' ||
+						 rotulo.charAt(0)=='9'){
+					if(rotulo.contains(".")){
+						tipo = "real";
+						anotacaoMontada = "_"+tipo;
+						return anotacaoMontada;
+					}else{
+						tipo = "int";
+						anotacaoMontada = "_"+tipo;
+						return anotacaoMontada;
+					}
+				}else if(rotulo.charAt(0)=='"' && 
+						rotulo.charAt(rotulo.length()-1)=='"'){
+					tipo ="string";
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}else if(rotulo.equals("TRUE") || rotulo.equals("FALSE")){
+					tipo ="boolean";
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}else if(rotulo.equals("chamada_funcao")){
+					String anotacaoFuncaoAninhada = montarAnotacaoChamadaFuncao(parametroChamadaFuncao, anotacao);
+					tipo = tabela.getTipo_funcaoMap().get(anotacaoFuncaoAninhada);
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}else throw new ErroVariavelNaoDelarada("A variavel "+rotulo+" "
+						+ " não foi declarada em : "+parametroChamadaFuncao.getLinha(), parametroChamadaFuncao.getLinha());
+				
+			}else if( rotulo.equals("+") ||
+					  rotulo.equals("-") ||
+					  rotulo.equals("/") || 
+					  rotulo.equals("*") ||
+					  rotulo.equals("!")){
+				verificaExpressao(parametroChamadaFuncao, anotacao, "", false,"real");
+				if(rotulo.equals("!")){
+					tipo = "boolean";
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}else{
+					tipo = retornaTipoComumExpressaoChamadaFuncao(parametroChamadaFuncao, "", anotacao);
+					anotacaoMontada = "_"+tipo;
+					return anotacaoMontada;
+				}
+			}
+		}else if(rotulo.equals(",")){
+			filhoEsquerdo = parametroChamadaFuncao.getFilhos().get(0);
+			filhoDireito = parametroChamadaFuncao.getFilhos().get(1);
+			anotacaoMontada+= montarParametrosAnotacaoFuncao(filhoEsquerdo, anotacao);
+			anotacaoMontada+= montarParametrosAnotacaoFuncao(filhoDireito, anotacao);
+		}
+		return anotacaoMontada;
+	}
+   public String retornaTipoComumExpressaoChamadaFuncao(AST expr, String tipo, String anotacao) throws ErroDeTipo, ErroVariavelNaoDelarada{
+		String rotulo = expr.getRotulo();
+		if(rotulo.equals("+") ||
+			rotulo.equals("-")||
+			rotulo.equals("/")||
+			rotulo.equals("*")){
+			AST filhoEsquerdo, filhoDireito;
+			filhoEsquerdo = expr.getFilhos().get(0);
+			filhoDireito = expr.getFilhos().get(1);
+			if(!tipo.equals("real"))
+				tipo = retornaTipoComumExpressaoChamadaFuncao(filhoEsquerdo, tipo, anotacao);
+			if(!tipo.equals("real"))
+				tipo = retornaTipoComumExpressaoChamadaFuncao(filhoDireito, tipo, anotacao);
+		}else if((rotulo.charAt(0)=='0' ||
+				 rotulo.charAt(0)=='1' ||
+				 rotulo.charAt(0)=='2' ||
+				 rotulo.charAt(0)=='3' ||
+				 rotulo.charAt(0)=='4' ||
+				 rotulo.charAt(0)=='5' ||
+				 rotulo.charAt(0)=='6' ||
+				 rotulo.charAt(0)=='7' ||
+				 rotulo.charAt(0)=='8' ||
+				 rotulo.charAt(0)=='9')){
+			if(rotulo.contains(".")){
+				tipo = "real";
+				return tipo;
+			}else{
+				tipo ="int";
+				return tipo;
+			}
+		}else if(!rotulo.equals("TRUE") &&
+				 !rotulo.equals("FALSE")&&
+				 (rotulo.charAt(0)!= '"' && rotulo.charAt(rotulo.length()-1)!='"')){
+			if(tabela.verificaSeExisteDeclaracaoConstantes(rotulo)){
+				tipo = tabela.getDeclaracoes().get(rotulo+"_const").getTipo();
+				return tipo;
+			}else if(tabela.verificaSeExisteDeclaracaoArrays(rotulo)){
+				tipo = tabela.getDeclaracoes().get(rotulo+"_const").getTipo();
+				return tipo;
+			}else if(tabela.verificaSeExisteDeclaracaoVariaveisGlobais(rotulo)){
+				tipo = tabela.getDeclaracoes().get(rotulo+"_var").getTipo();
+				return tipo;
+			}else throw new ErroVariavelNaoDelarada("A variável "+rotulo+" não declarada em : " 
+					+expr.getLinha(), expr.getLinha());
+		}else throw new ErroDeTipo("O valor "+rotulo+" com tipo incompatível para expressão em : "
+				+expr.getLinha(), expr.getLinha());
+		return tipo;
+	}
+	
+	
+	public void testaPrint(AST noPrint, String anotacao_funcao) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel{
+		String RotulofilhoDeNoPrint = noPrint.getRotulo();
+		if(!RotulofilhoDeNoPrint .equals(",") && !RotulofilhoDeNoPrint.equals("")){
+			verificaExpressao(noPrint, anotacao_funcao, "", false,"");
+			return;
+		}else if(RotulofilhoDeNoPrint.equals(",")){
+			AST noExprDeNoPrintEsquerda = noPrint.getFilhos().get(0);
+			AST noExprDeNoPrintDireita = noPrint.getFilhos().get(1);
+			testaPrint(noExprDeNoPrintEsquerda, anotacao_funcao);
+			testaPrint(noExprDeNoPrintDireita, anotacao_funcao);
+		}else return;
+	}
+	
+	public void testaReturn(AST noReturn, String anotacao) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel, IOException{
+		AST expr = noReturn.getFilhos().get(0);
+		String tipoFuncao = tabela.getTipo_funcaoMap().get(anotacao);
+		verificaExpressaoEmAtribuicao(expr, anotacao, tipoFuncao);
+	}
+	
+	public void testaRead(AST noRead, String anotacao_funcao) throws ErroVariavelNaoDelarada {
+		String rotulo = noRead.getRotulo();
+		if(!rotulo .equals(",") && !rotulo.equals("")){
+			check.checaRead(tabela, noRead, anotacao_funcao);
+			return;
+		}else if(rotulo.equals(",")){
+			AST noExprDeNoPrintEsquerda = noRead.getFilhos().get(0);
+			AST noExprDeNoPrintDireita = noRead.getFilhos().get(1);
+			testaRead(noExprDeNoPrintEsquerda, anotacao_funcao);
+			testaRead(noExprDeNoPrintDireita, anotacao_funcao);
+		}else return;
+		
+	}
+	
+	public void testaElse(AST noElse, String anotacao_funcao) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel, ErroComandoReadSemParametros, ErroAnotacaoDeComando, IOException{
+		String rotuloAtual;
+		if(noElse.getFilhos().get(0) != null){
+			for(AST filhosComandoElse : noElse.getFilhos()){
+				rotuloAtual = filhosComandoElse.getRotulo();
+				if(rotuloAtual.equals("print")) testaPrint(filhosComandoElse.getFilhos().get(0), anotacao_funcao);
+				else if(rotuloAtual.equals("read")){
+					AST filhoNoRead = filhosComandoElse.getFilhos().get(0);
+					if(filhoNoRead != null)
+						testaRead(filhoNoRead, anotacao_funcao);
+					else throw new ErroComandoReadSemParametros("O comando read sem parâmetros em :"+filhosComandoElse.getLinha(), 
+							filhosComandoElse.getLinha());
+				}
+				else if(rotuloAtual.equals("for")) testaComandos(filhosComandoElse, anotacao_funcao);
+				else if(rotuloAtual.equals("while")) testaComandos(filhosComandoElse, anotacao_funcao);
+				else if(rotuloAtual.equals("if")) testaComandos(filhosComandoElse, anotacao_funcao);
+				else if(rotuloAtual.equals("=")) testaAtribuicao(filhosComandoElse, anotacao_funcao);
+				else if(rotuloAtual.equals("return")) testaReturn(filhosComandoElse, anotacao_funcao);
+				else if(rotuloAtual.equals("exit")) continue;
+				//else if(rotuloAtual.equals("else")) testaElse(filhosComandoElse, anotacao_funcao);
+				else if(rotuloAtual.equals("chamada_funcao"))testaChamadaFuncao(filhosComandoElse, anotacao_funcao);
+			}
+		}else throw new ErroAnotacaoDeComando("O comando "+noElse.getRotulo()+" com problema na anotacao em: "+noElse.getLinha(),
+				noElse.getLinha());
+	}
+	
+	public void testaChamadaFuncao(AST noChamadaFuncao, String anotacao_funcao) throws ErroVariavelNaoDelarada, ErroOperadorNot, ErroDeTipo, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel{
+		String anotacaoChamaFuncao = montarAnotacaoChamadaFuncao(noChamadaFuncao, anotacao_funcao);
+		if(tabela.getTipo_funcaoMap().containsKey(anotacaoChamaFuncao)){
+			return;
+		}else throw new ErroFuncaoNaoDeclarada("A função com anotação "+anotacaoChamaFuncao
+				+" não existe ou parametros de tipos incompatíveis em : "+noChamadaFuncao.getLinha(),noChamadaFuncao.getLinha());
+		
+	}
+	
+	public void testaIf(AST noIf, String anotacao_funcao) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel, ErroComandoReadSemParametros, ErroAnotacaoDeComando, IOException {
+		AST noOperadorRelacional = noIf.getFilhos().get(0);
+		verificaOperadorRelacional(noOperadorRelacional, anotacao_funcao, "boolean");
+		String rotuloAtual;
+		if(noIf.getFilhos().get(0) != null){
+			for(AST filhosComandoIf : noIf.getFilhos()){
+				rotuloAtual = filhosComandoIf.getRotulo();
+				if(rotuloAtual.equals("print")) testaPrint(filhosComandoIf.getFilhos().get(0), anotacao_funcao);
+				else if(rotuloAtual.equals("read")){
+					AST filhoNoRead = filhosComandoIf.getFilhos().get(0);
+					if(filhoNoRead != null)
+						testaRead(filhoNoRead, anotacao_funcao);
+					else throw new ErroComandoReadSemParametros("O comando read sem parâmetros em :"+filhosComandoIf.getLinha(), 
+							filhosComandoIf.getLinha());
+				}
+				else if(rotuloAtual.equals("for")) testaComandos(filhosComandoIf, anotacao_funcao);
+				else if(rotuloAtual.equals("while")) testaComandos(filhosComandoIf, anotacao_funcao);
+				else if(rotuloAtual.equals("if")) testaIf(filhosComandoIf, anotacao_funcao);
+				else if(rotuloAtual.equals("=")) testaAtribuicao(filhosComandoIf, anotacao_funcao);
+				else if(rotuloAtual.equals("return")) testaReturn(filhosComandoIf, anotacao_funcao);
+				else if(rotuloAtual.equals("exit")) continue;
+				else if(rotuloAtual.equals("else")) testaElse(filhosComandoIf, anotacao_funcao);
+				else if(rotuloAtual.equals("chamada_funcao")) testaChamadaFuncao(filhosComandoIf, anotacao_funcao);
+			}
+		}else throw new ErroAnotacaoDeComando("O comando "+noIf.getRotulo()+" com problema na anotacao em: "+noIf.getLinha(),
+				noIf.getLinha());
+	}
+	
+	public void testaComandos(AST no, String anotacao) throws ErroOperadorNot, ErroDeTipo, ErroVariavelNaoDelarada, ErroFuncaoNaoDeclarada, ErroTipoFuncaoIncompativel, ErroComandoReadSemParametros, ErroAnotacaoDeComando, IOException{
+		String variavel="", valorInicial="", tipoValorInicial="", valorFinal="", passo="";
+		String rotulo = no.getRotulo();
+		if(rotulo.equals("while")){
+			AST noOperadorRelacional = no.getFilhos().get(0);
+			verificaOperadorRelacional(noOperadorRelacional, anotacao_funcao, "boolean");
+		}else if(rotulo.equals("for")){
+			variavel = no.getFilhos().get(0).getFilhos().get(0).getRotulo();
+			valorInicial = no.getFilhos().get(0).getFilhos().get(1).getRotulo();
+			valorFinal = no.getFilhos().get(1).getFilhos().get(0).getRotulo();
+			if(no.getFilhos().size()>2){
+				if(no.getFilhos().get(2).getRotulo().equals("step"))
+					passo = no.getFilhos().get(2).getFilhos().get(0).getRotulo();
+			}
+			if(tabela.verificaSeFoiDeclaradoVariaveisLocais(variavel, anotacao)){
+				tipoValorInicial = tabela.retornaVariavelLocal(anotacao, variavel).getTipo();
+			}else if(tabela.verificaSeExisteDeclaracaoVariaveisGlobais(variavel)){
+				tipoValorInicial = tabela.getDeclaracoes().get(variavel+"_var").getTipo();
+			}else throw new ErroVariavelNaoDelarada("A variável "+variavel+" não foi declarada em : "
+					+no.getLinha(), no.getLinha());
+			if(tipoValorInicial.equals("int")){
+				try{
+					Integer.parseInt(valorInicial);
+					//Integer.parseInt(valorFinal);
+				}catch(Exception e){
+					throw new ErroDeTipo("O valor "+valorInicial+" tem que ser do tipo "+tipoValorInicial
+							+" em :"+no.getLinha(),no.getLinha());
+				}
+				
+				try{
+					//Integer.parseInt(valorInicial);
+					Integer.parseInt(valorFinal);
+				}catch(Exception e){
+					throw new ErroDeTipo("O valor "+valorFinal+" tem que ser do tipo "+tipoValorInicial
+							+" em :"+no.getLinha(),no.getLinha());
+				}
+				if(!passo.equals("")){
+					try{
+						Integer.parseInt(passo);
+						//Integer.parseInt(valorFinal);
+					}catch(Exception e){
+						throw new ErroDeTipo("O valor do passo  tem que ser do tipo "+tipoValorInicial
+								+" em :"+no.getLinha(),no.getLinha());
+					}
+				}
+			}else if(tipoValorInicial.equals("real")){
+				try{
+					Float.parseFloat(valorInicial);
+					//Integer.parseInt(valorFinal);
+				}catch(Exception e){
+					throw new ErroDeTipo("O valor "+valorInicial+" tem que ser do tipo "+tipoValorInicial
+							+" em :"+no.getLinha(),no.getLinha());
+				}
+				
+				try{
+					//Integer.parseInt(valorInicial);
+					Float.parseFloat(valorFinal);
+				}catch(Exception e){
+					throw new ErroDeTipo("O valor "+valorFinal+" tem que ser do tipo "+tipoValorInicial
+							+" em :"+no.getLinha(),no.getLinha());
+				}
+				
+				if(!passo.equals("")){
+					try{
+						Float.parseFloat(passo);
+						//Integer.parseInt(valorFinal);
+					}catch(Exception e){
+						throw new ErroDeTipo("O valor do passo  tem que ser do tipo "+tipoValorInicial
+								+" em :"+no.getLinha(),no.getLinha());
+					}
+				}
+			}else throw new ErroDeTipo("Tipo "+tipoValorInicial+" não compatível em for em :"+no.getLinha(),
+					no.getLinha());
+		}
+		
+		String rotuloAtual;
+		if(no.getFilhos().get(0) != null){
+			for(AST comandos : no.getFilhos()){
+				rotuloAtual = comandos.getRotulo();
+				if(rotuloAtual.equals("print")) testaPrint(comandos.getFilhos().get(0), anotacao_funcao);
+				else if(rotuloAtual.equals("read")){
+					AST filhoNoRead = comandos.getFilhos().get(0);
+					if(filhoNoRead != null)
+						testaRead(filhoNoRead, anotacao_funcao);
+					else throw new ErroComandoReadSemParametros("O comando read sem parâmetros em :"+comandos.getLinha(), 
+								comandos.getLinha());
+				}
+				else if(rotuloAtual.equals("for")) testaComandos(comandos, anotacao_funcao);
+				else if(rotuloAtual.equals("while")) testaComandos(comandos, anotacao_funcao);
+				else if(rotuloAtual.equals("if")) testaIf(comandos, anotacao_funcao);
+				else if(rotuloAtual.equals("=")) testaAtribuicao(comandos, anotacao_funcao);
+				else if(rotuloAtual.equals("return")) testaReturn(comandos, anotacao_funcao);
+				else if(rotuloAtual.equals("exit")) continue;
+				//else if(rotuloAtual.equals("else")) testaElse(comandos, anotacao_funcao);
+				else if(rotuloAtual.equals("chamada_funcao")) testaChamadaFuncao(comandos, anotacao_funcao);
+			}
+			
+		}else throw new ErroAnotacaoDeComando("O comando "+rotulo+" com problema na anotacao em: "+no.getLinha(),
+				no.getLinha());
+		}
 }
